@@ -1,0 +1,81 @@
+.body-card {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  width: 30%;
+  background-color: #ffffff;
+  height: 20%;
+  border-radius: 15px;
+  padding: 1%;
+  margin: 1%;
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 3%;
+}
+
+span {
+  font-size: 15px;
+}
+
+p {
+  font-size: 15px;
+  margin: 2% 0%;
+}
+
+.botton-info {
+  padding: 0% 3%;
+}
+
+a {
+  text-decoration: none;
+  color: #c4c4c4;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.icon img {
+  width: 4%;
+  margin: 1%;
+}
+
+.right img {
+  width: 6%;
+  margin: 1%;
+}
+
+/* Responsive styles for medium screens (min-width: 768px) and (max-width: 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .body-card {
+    width: 50%; /* Adjust the width as needed */
+    margin: 2%;
+    padding: 2%;
+  }
+  /* Adjust other styles as needed for medium screens */
+}
+
+/* Responsive styles for smaller screens (max-width: 767px) */
+@media (max-width: 767px) {
+  .body-card {
+    width: 90%; /* Full width on smaller screens */
+    height: auto; /* Auto height to adjust based on content */
+    margin: 3%; /* Remove margin for full width */
+    padding: 3%; /* Adjust padding as needed */
+  }
+
+  /* Adjust other styles as needed for smaller screens */
+  span,
+  p {
+    font-size: 15px; /* Slightly smaller font size */
+  }
+
+  .botton-info {
+    padding: 2%; /* Adjust padding as needed */
+    margin-top: 3%; /* Adjust margin-top as needed */
+  }
+}
