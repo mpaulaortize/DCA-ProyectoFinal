@@ -1,0 +1,9 @@
+* {
+    font-family: "Inter", sans-serif;
+  }
+  
+  .title {
+    color: white;
+    display: flex;
+    margin: 2%;
+  }
