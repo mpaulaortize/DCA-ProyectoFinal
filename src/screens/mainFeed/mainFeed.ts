@@ -92,27 +92,56 @@ class MainFeed extends HTMLElement {
     );
     generalContainer.appendChild(postcard);
 
-    const remainingItems = data.length - this.dataIndex;
+    for (let i = 0; i < dataTweet.length; i++) {
+      const tweetCard = this.ownerDocument.createElement(
+        "tweet-card"
+      ) as TweetCard;
+      tweetCard.setAttribute(TweetCardAttribute.user, dataTweet[i].user);
+      tweetCard.setAttribute(TweetCardAttribute.message, dataTweet[i].message);
+      tweetCard.setAttribute(TweetCardAttribute.img, dataTweet[i].img);
+      generalContainer.appendChild(tweetCard);
 
-    for (
-      let i = this.dataIndex;
-      i < this.dataIndex + Math.min(9, remainingItems);
-      i++
-    ) {
-      if (i < this.tweets.length) {
-        generalContainer.appendChild(this.tweets[i]);
-      }
+      const audioCard = this.ownerDocument.createElement(
+        "audio-card"
+      ) as AudioCard;
+      audioCard.setAttribute(AudioCardAttribute.img, dataAudio[i].img);
+      generalContainer.appendChild(audioCard);
 
-      if (i < this.card.length) {
-        generalContainer.appendChild(this.card[i]);
-      }
-
-      if (i < this.card.length) {
-        generalContainer.appendChild(this.post[i]);
-      }
+      const mainCard = this.ownerDocument.createElement(
+        "main-imgcard"
+      ) as ImgCard;
+      mainCard.setAttribute(ImgCardAttribute.user, dataMain[i].user);
+      mainCard.setAttribute(ImgCardAttribute.likes, dataMain[i].likes);
+      mainCard.setAttribute(ImgCardAttribute.caption, dataMain[i].caption);
+      mainCard.setAttribute(
+        ImgCardAttribute.publication,
+        dataMain[i].publication
+      );
+      generalContainer.appendChild(mainCard);
     }
 
-    this.dataIndex += 9;
+    //   const remainingItems = data.length - this.dataIndex;
+
+    //   for (
+    //     let i = this.dataIndex;
+    //     i < this.dataIndex + Math.min(9, remainingItems);
+    //     i++
+    //   ) {
+    //     if (i < this.tweets.length) {
+    //       generalContainer.appendChild(this.tweets[i]);
+    //     }
+
+    //     if (i < this.card.length) {
+    //       generalContainer.appendChild(this.card[i]);
+    //     }
+
+    //     if (i < this.card.length) {
+    //       generalContainer.appendChild(this.post[i]);
+    //     }
+    //   }
+
+    //   this.dataIndex += 9;
+    // }
   }
 }
 

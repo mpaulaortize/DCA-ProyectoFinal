@@ -62,9 +62,9 @@ class MenuCard extends HTMLElement {
           <ul>
               <a><img src="/img/Iconsearch.png"/></a>
               <a><img src="/img/Iconnotifications.png"/></a>
-              a><img src="/img/Iconhome.png"/></a>
-              a><img src="/img/Iconmessages.png"/></a>
-              a><img class="user" src="https://m.media-amazon.com/images/I/91LYRChMy-L._SX1248_CR0%2C0%2C1248%2C1248_.jpg"/></a>
+              <a><img src="/img/Iconhome.png"/></a>
+              <a><img src="/img/Iconmessages.png"/></a>
+              <a><img class="user" src="https://m.media-amazon.com/images/I/91LYRChMy-L._SX1248_CR0%2C0%2C1248%2C1248_.jpg"/></a>
           </ul>
         </nav>
       `;
