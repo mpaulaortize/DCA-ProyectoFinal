@@ -1,19 +1,35 @@
 import indexstyles from "./message.css";
+
 import MenuCard, {
   Attribute as MenuCardAttribute,
 } from "../../components/menu-Card/menu-Card";
 import userProfile, {
   Attribute as userProfileAttribute,
 } from "../../components/userProfile/userProfile";
+import { dataGrid } from "../../components/feed-Grid/dataprofile";
+import profileGrid, {
+  Attribute as profileGridAttribute,
+} from "../../components/feed-Grid/profile-Grid";
 
 class Profile extends HTMLElement {
+  message: profileGrid[] = [];
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
+
+    dataGrid.forEach((photo) => {
+      const profileGrid = this.ownerDocument.createElement(
+        "profile-grid"
+      ) as profileGrid;
+      profileGrid.setAttribute(profileGridAttribute.img, photo.img);
+      this.message.push(profileGrid);
+    });
   }
 
   connectedCallback() {
     this.render();
+    console.log(this.message);
   }
 
   render() {
@@ -28,6 +44,11 @@ class Profile extends HTMLElement {
     ) as userProfile;
     Profile.setAttribute(userProfileAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(Profile);
+
+    this.message.forEach((photo) => {
+      console.log(photo);
+      this.shadowRoot?.appendChild(photo);
+    });
   }
 }
 
