@@ -1,4 +1,4 @@
-import poststyles from "./search-Grid.css";
+import searchstyles from "./search-Grid.css";
 
 export enum Attribute {
   "img" = "img",
@@ -46,7 +46,7 @@ class searchGrid extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = `
           <style>
-            ${poststyles}
+            ${searchstyles}
           </style>
 
       <section class="grid-container">

@@ -1,23 +1,23 @@
 const datasearchGrid = [
   {
-    img: "https://media.artsper.com/interview/8907/8907_2_l.jpg",
-    img1: "https://thenewsette.com/app/uploads/2019/10/Tezza-horizontal.jpg",
-    img2: "https://www.jetsetter.com//uploads/sites/7/2018/12/6D2A8599-Edit-1380x1035.jpg",
+    img: "https://pbs.twimg.com/media/FVqS8U2XwAE07rK?format=jpg&name=large",
+    img1: "https://assets.vogue.com/photos/5b63629010279c5f793f4599/master/w_2560%2Cc_limit/tyler-mitchell-vogue-september-issue.jpg",
+    img2: "https://images.vogue.it/Photovogue/e9487e40-95a8-11ed-82e5-499516c9b9a4_admin-thumbnail.jpg",
   },
   {
-    img: "https://www.shoptezza.com/cdn/shop/files/Tezza-2015.jpg?v=1684783821",
-    img1: "https://i.pinimg.com/1200x/1f/fc/ba/1ffcba000eaeeebb09949fbd80025858.jpg",
-    img2: "https://i.pinimg.com/1200x/d1/5d/44/d15d4429a1473aca14c1b941364ebcbf.jpg",
+    img: "https://api.time.com/wp-content/uploads/2016/11/amanda-charchian-vogue.jpg",
+    img1: "https://blog.artsper.com/wp-content/uploads/2018/08/Steven-Meisel-Vogue-1990-510x644.jpg",
+    img2: "https://i.pinimg.com/1200x/05/76/59/0576593d1e08d3bd944c76fbcc769f09.jpg",
   },
   {
-    img: "https://wwd.com/wp-content/uploads/2021/03/2J9A5382.jpg",
-    img1: "https://i.pinimg.com/736x/24/5c/4f/245c4fc77d2677c9a9217cb9be8d1508.jpg",
-    img2: "https://i.pinimg.com/736x/37/60/20/37602038ffd1fd951bb76d8b3b397bfb.jpg",
+    img: "https://www.format.com/wp-content/uploads/two_woman_in_a_fashion_photoshoot.jpg",
+    img1: "https://assets.vogue.com/photos/5fa981a627c2f1773abf168d/master/w_1600%2Cc_limit/Untitled-(6).jpg",
+    img2: "https://assets.vogue.com/photos/622b6938f1c0bf717ac69d00/master/w_2560%2Cc_limit/VO0422_SocialCover_Logo.jpg",
   },
   {
-    img: "https://www.iconicmagazines.com/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-10-at-07.40.14-e1694347732798.jpg",
-    img1: "https://images.squarespace-cdn.com/content/v1/5d796a0dbce54951f877ddbb/1609885517993-OHDJ1WH160P2A0ONXHYH/4059212F-285A-4026-AE94-A269D91BB768.JPG",
-    img2: "https://images.squarespace-cdn.com/content/v1/5d796a0dbce54951f877ddbb/1609886315498-YTVRUY2AZUY0K5WAUKVD/2J9A2984.copy.jpg",
+    img: "https://www.dailyartmagazine.com/wp-content/uploads/2022/04/2008_NYR_02252_0098_000045833.jpeg",
+    img1: "https://media.vogue.co.uk/photos/60db53aef456975e02632eda/master/w_1600%2Cc_limit/Margot%2520Robbie%2520Aug21.jpg",
+    img2: "https://assets.vogue.com/photos/5c98d01397dcac2d9eb58894/master/w_2560%2Cc_limit/00-story-vb.jpg",
   },
 ];
 
