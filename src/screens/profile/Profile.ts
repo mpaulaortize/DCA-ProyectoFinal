@@ -1,4 +1,4 @@
-import indexstyles from "./message.css";
+import indexstyles from "./profile.css";
 
 import MenuCard, {
   Attribute as MenuCardAttribute,
