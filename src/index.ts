@@ -1,7 +1,6 @@
 import "./screens/mainFeed/mainFeed";
 import indexStyle from "./index.css";
 import "./screens/profile/Profile";
-import "./screens/search/search";
 //import "./components/export"
 
 class AppContainer extends HTMLElement {
