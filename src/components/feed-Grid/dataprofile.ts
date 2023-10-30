@@ -2,7 +2,7 @@ const dataGrid = [
   {
     img: "https://media.artsper.com/interview/8907/8907_2_l.jpg",
     img1: "https://thenewsette.com/app/uploads/2019/10/Tezza-horizontal.jpg",
-    img2: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD3jbijnB0FWK88_SXmTTHxArDd5MRdHYyEKDHq1OSSwKJdjMzaNHm9MiETNDTjZ0P3d4&usqp=CAU",
+    img2: "https://www.jetsetter.com//uploads/sites/7/2018/12/6D2A8599-Edit-1380x1035.jpg",
   },
   {
     img: "https://www.shoptezza.com/cdn/shop/files/Tezza-2015.jpg?v=1684783821",

@@ -23,6 +23,8 @@ class Profile extends HTMLElement {
         "profile-grid"
       ) as profileGrid;
       profileGrid.setAttribute(profileGridAttribute.img, photo.img);
+      profileGrid.setAttribute(profileGridAttribute.img1, photo.img1);
+      profileGrid.setAttribute(profileGridAttribute.img2, photo.img2);
       this.message.push(profileGrid);
     });
   }
