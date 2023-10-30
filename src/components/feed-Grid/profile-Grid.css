@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4px;
-  margin: 0% 10%;
+  margin: 0% 2%;
 }
 
 /* Estilos para cada foto */
