@@ -1,0 +1,33 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.linea-blanca {
+  border: none;
+  border-top: 0.5px solid #fff;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+section {
+  display: flex;
+  flex-direction: space;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0% 10%;
+  margin-bottom: 5%;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+}
+
+p {
+  color: white;
+}
+
+a {
+  color: white;
+}
