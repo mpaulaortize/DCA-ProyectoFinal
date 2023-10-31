@@ -1,0 +1,57 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.user {
+  width: 7%;
+  border-radius: 50%;
+  border: 3px solid #b8fe67;
+  margin-bottom: 10px;
+}
+
+.user-profile {
+  font-size: 25px;
+  color: white;
+  margin: 0%;
+}
+
+.user-at {
+  color: #a1a1a1;
+  margin: 0%;
+}
+
+.container-secondline {
+  display: flex;
+  align-items: center;
+  margin: 0%;
+  padding: 0%;
+}
+
+.user-link {
+  font-weight: 700;
+  color: #b8fe67;
+}
+
+.user-description {
+  color: white;
+  margin-left: 5px;
+}
+
+button {
+  padding: 15px 5px;
+  width: 10%;
+  font-size: 15px;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  background-color: white;
+  margin-bottom: 3%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

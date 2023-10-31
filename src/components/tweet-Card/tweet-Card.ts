@@ -61,7 +61,7 @@ class TweetCard extends HTMLElement {
               </section>
             
               <section class="roundComponents">
-                <img class="imgprofiles" src="${this.img}"></img>
+                <img class="imgprofiles" src="${this.img}">
               </section>
             </section>
         `;
