@@ -3,22 +3,12 @@ import IndexStyle from "./mainFeed.css";
 import { dataAudio } from "../../components/audio-Card/dataAudio";
 import { dataMain } from "../../components/main-ImgCard/dataMain";
 import { dataTweet } from "../../components/tweet-Card/dataTweet";
-import MenuCard, {
-  Attribute as MenuCardAttribute,
-} from "../../components/menu-Card/menu-Card";
-import TweetCard, {
-  Attribute as TweetCardAttribute,
-} from "../../components/tweet-Card/tweet-Card";
-import AudioCard, {
-  Attribute as AudioCardAttribute,
-} from "../../components/audio-Card/audio-Card";
-import PostCard, {
-  Attribute as PostCardCardAttribute,
-} from "../../components/post-Card/post-Card";
-import ImgCard, {
-  Attribute as ImgCardAttribute,
-} from "../../components/main-ImgCard/main-ImgCard";
-import indexstyles from "./index.css";
+import MenuCard, { Attribute as MenuCardAttribute,} from "../../components/menu-Card/menu-Card";
+import TweetCard, {Attribute as TweetCardAttribute,} from "../../components/tweet-Card/tweet-Card";
+import AudioCard, {Attribute as AudioCardAttribute,} from "../../components/audio-Card/audio-Card";
+import PostCard, {Attribute as PostCardCardAttribute,} from "../../components/post-Card/post-Card";
+import ImgCard, {Attribute as ImgCardAttribute,} from "../../components/main-ImgCard/main-ImgCard";
+import indexstyles from "./mainFeed.css"
 
 class MainFeed extends HTMLElement {
   tweets: TweetCard[] = [];
@@ -31,9 +21,7 @@ class MainFeed extends HTMLElement {
     this.attachShadow({ mode: "open" });
 
     dataTweet.forEach((tweets) => {
-      const tweetCard = this.ownerDocument.createElement(
-        "tweet-card"
-      ) as TweetCard;
+      const tweetCard = this.ownerDocument.createElement("tweet-card") as TweetCard;
       tweetCard.setAttribute(TweetCardAttribute.user, tweets.user);
       tweetCard.setAttribute(TweetCardAttribute.message, tweets.message);
       tweetCard.setAttribute(TweetCardAttribute.img, tweets.img);
@@ -41,9 +29,7 @@ class MainFeed extends HTMLElement {
     });
 
     dataAudio.forEach((card) => {
-      const audioCard = this.ownerDocument.createElement(
-        "audio-card"
-      ) as AudioCard;
+      const audioCard = this.ownerDocument.createElement("audio-card") as AudioCard;
       audioCard.setAttribute(AudioCardAttribute.img, card.img);
       this.card.push(audioCard);
     });
