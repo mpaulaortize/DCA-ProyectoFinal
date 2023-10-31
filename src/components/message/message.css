@@ -2,15 +2,19 @@
 * {
     font-family: "Inter", sans-serif;
   }
-  
-  .container {
+* .time{
+    color:rgba(0, 0, 0, 0.30);
+}
+
+  .container { 
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 35%;
     border-radius: 20px;
     background: #ffffff;
     margin: 1%;
     padding: 3% 2%;
+   
   }
   
   .userMessage {
@@ -23,12 +27,14 @@
   }
   
   .user {
-    font-size: 15px;
-    height: 20px;
+    font-size: 12px;
   }
   
   .message {
-    font-size: 12px;
+    font-size: 15px;
+    height: 20px;
+    flex: 1;
+    margin-right: 10px
   }
   
   img {
@@ -36,6 +42,22 @@
     height: 47px;
     border-radius: 50%;
     margin-right: 10px;
+  }
+
+  .messageXtime{
+    display: flex;
+    margin: 0%;
+   }
+
+  .container2{
+    width: 65%;
+    background-color: #ffffff;
+    height: 100%;
+  }
+
+  .containerXcontainer2{
+    display: flex;
+    margin: 0%;
   }
   
   /* Medium screen styles (min-width: 768px, max-width: 1023px) */
@@ -47,17 +69,28 @@
     }
   
     .user {
-      font-size: 15px;
-      height: 20px;
+    
+      font-size: 12px;
     }
   
     .message {
-      font-size: 12px;
+      font-size: 15px;
+      height: 20px;
+      flex: 1;
+      margin-right: 10px
     }
   
     img {
       width: 47px;
       height: 47px;
+    }
+
+    .messageXtime{
+      display: flex;
+      margin: 0%;
+     }
+    .container2{
+      display: none;
     }
   }
   
@@ -70,17 +103,28 @@
     }
   
     .user {
-      font-size: 15px;
+      font-size: 12px;
       height: 20px;
+      
     }
   
     .message {
-      font-size: 12px;
+      font-size: 15px;
+      height: 12px;
+      flex: 1;
+      margin-right: 10px
+
     }
   
     img {
       width: 47px;
       height: 47px;
     }
+
+   .messageXtime{
+    display: flex;
+    margin: 0%;
+   }
+   
   }
   

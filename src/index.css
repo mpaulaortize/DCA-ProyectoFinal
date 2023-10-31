@@ -1,4 +1,6 @@
-
-.notificationScreen{
+.MessagesScreen{
+    display: none;
+}
+.mainScreen{
     display: none;
 }

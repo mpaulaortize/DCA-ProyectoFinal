@@ -4,18 +4,21 @@ export enum Attribute {
   "user" = "user",
   "message" = "message",
   "img" = "img",
+  "time" = "time"
 }
 
 class MessageCard extends HTMLElement {
   user?: string;
   message?: string;
   img?: string;
+  time?: string;
 
   static get observedAttributes() {
     const attrs: Record<Attribute, null> = {
       user: null,
       message: null,
       img: null,
+      time: null
     };
     return Object.keys(attrs);
   }
@@ -49,21 +52,25 @@ class MessageCard extends HTMLElement {
             <style>
               ${messagestyles}
             </style>
-
+          
             <section class="container">
-              <section class="userMessage">
+            <section class="roundComponents">
+            <img class="imgprofiles" src="${this.img}"></img>
+            </section>
+
+              <section class="general">
                 <div class="user">
-                  <p>${this.user}</p>
-                </div>
-            
+                  <h2>${this.user}</h2>
+                  </div>
+                <section class="messageXtime">
                 <div class="message">
-                  <h2>${this.message}</h2>
-                </div>
-              </section>
+                  <p>${this.message}</p>
+                  </div>
+                <div class="time">
+                  <h6>${this.time}</h6>
+                  </div>
+                  </section>
             
-              <section class="roundComponents">
-                <img class="imgprofiles" src="${this.img}"></img>
-              </section>
             </section>
         `;
     }

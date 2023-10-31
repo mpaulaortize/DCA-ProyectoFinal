@@ -17,6 +17,7 @@ message: MessageCard[] = [];
         messageCard.setAttribute(MessageCardAttribute.user, message.user);
         messageCard.setAttribute(MessageCardAttribute.message, message.message);
         messageCard.setAttribute(MessageCardAttribute.img, message.img);
+        messageCard.setAttribute(MessageCardAttribute.time, message.time);
         this.message.push(messageCard);
       });
   
@@ -33,26 +34,37 @@ message: MessageCard[] = [];
      const styleElement = document.createElement("style");
      styleElement.textContent = indexstyles;
      this.shadowRoot?.appendChild(styleElement);
-    
-     const lineSearch = document.createElement("div");
-     lineSearch.classList.add(`lineSearch`)
-     this.shadowRoot?.appendChild(lineSearch);
-
-     const title = document.createElement("h3");
-     title.textContent = "Messages";
-     title.classList.add("title");
-     this.shadowRoot?.appendChild(title);
 
     const menucard = this.ownerDocument.createElement("menu-card") as MenuCard;
     menucard.setAttribute(MenuCardAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(menucard);
 
+    const search = this.ownerDocument.createElement("search-component");
+    this.shadowRoot?.appendChild(search);
+
+    const title = document.createElement("h3");
+    title.textContent = "Messages";
+    title.classList.add("title");
+    this.shadowRoot?.appendChild(title);
+
+    
+    const general = document.createElement("div");
+     general.classList.add(`general`)
+     this.shadowRoot?.appendChild(general);
+
+     const datacontainer = document.createElement("div");
+     datacontainer.classList.add(`data`)
+     this.shadowRoot?.appendChild(datacontainer); 
+
     this.message.forEach(user => {
       console.log(user);
-      this.shadowRoot?.appendChild(user)
+      datacontainer.appendChild(user)
       
     })
 
+    const yourmessages = this.ownerDocument.createElement("your-messages");
+    yourmessages.classList.add("yourmessage")
+    general.appendChild(yourmessages);
     
   }
 }
