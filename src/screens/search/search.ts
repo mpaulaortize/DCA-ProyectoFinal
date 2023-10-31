@@ -1,4 +1,4 @@
-import indexstyles from "./profile.css";
+import indexstyles from "./search.css";
 
 import MenuCard, {
   Attribute as MenuCardAttribute,

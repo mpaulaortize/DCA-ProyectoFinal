@@ -16,7 +16,7 @@ const datasearchGrid = [
   },
   {
     img: "https://www.dailyartmagazine.com/wp-content/uploads/2022/04/2008_NYR_02252_0098_000045833.jpeg",
-    img1: "https://media.vogue.co.uk/photos/60db53aef456975e02632eda/master/w_1600%2Cc_limit/Margot%2520Robbie%2520Aug21.jpg",
+    img1: "https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/6047d1575f030d001cda1c8d.jpg",
     img2: "https://assets.vogue.com/photos/5c98d01397dcac2d9eb58894/master/w_2560%2Cc_limit/00-story-vb.jpg",
   },
 ];
