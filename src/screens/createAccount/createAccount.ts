@@ -6,6 +6,9 @@ import MenuCard, {
 import createForm, {
   Attribute as createFormAttribute,
 } from "../../components/createAccount-form/createAccount-form";
+import lowerMenu, {
+  Attribute as lowerMenuAttribute,
+} from "../../components/lower-menu/lower-menu";
 
 class createAccount extends HTMLElement {
   message: createForm[] = [];
@@ -27,6 +30,12 @@ class createAccount extends HTMLElement {
     ) as createForm;
     createForm.setAttribute(createFormAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(createForm);
+
+    const lowerMenu = this.ownerDocument.createElement(
+      "lower-menu"
+    ) as createForm;
+    lowerMenu.setAttribute(lowerMenuAttribute.user, "@a.miller");
+    this.shadowRoot?.appendChild(lowerMenu);
   }
 }
 
