@@ -2,6 +2,7 @@ import "./screens/mainFeed/mainFeed";
 import indexStyle from "./index.css";
 import "./screens/profile/Profile";
 import "./screens/search/search";
+import "./screens/createAccount/createAccount";
 
 //import "./components/export"
 
@@ -35,6 +36,10 @@ class AppContainer extends HTMLElement {
       const Search = this.ownerDocument.createElement("search-screen");
       this.shadowRoot?.appendChild(Search);
       Profile.classList.add("searchcreen");
+
+      const createAccount = this.ownerDocument.createElement("create-account");
+      this.shadowRoot?.appendChild(createAccount);
+      Profile.classList.add("createaccount");
     }
   }
 }

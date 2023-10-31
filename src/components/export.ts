@@ -6,3 +6,4 @@ export { default as MenuCard } from "./menu-Card/menu-Card.js";
 export { default as userProfile } from "./userProfile/userProfile.js";
 export { default as profileGrid } from "./feed-Grid/profile-Grid.js";
 export { default as searchGrid } from "./search-Grid/search-Grid.js";
+export { default as createForm } from "./createAccount-form/createAccount-form.js";
