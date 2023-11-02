@@ -1,130 +1,40 @@
-/* Default styles for screens wider than 1023px */
 * {
-    font-family: "Inter", sans-serif;
-  }
-* .time{
-    color:rgba(0, 0, 0, 0.30);
+  font-family: "Inter", sans-serif;
 }
 
-  .container { 
-    display: flex;
-    align-items: center;
-    width: 35%;
-    border-radius: 20px;
-    background: #ffffff;
-    margin: 1%;
-    padding: 3% 2%;
-   
-  }
-  
-  .userMessage {
-    display: flex;
-    flex: auto;
-    align-items: center;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 2%;
-  }
-  
-  .user {
-    font-size: 12px;
-  }
-  
-  .message {
-    font-size: 15px;
-    height: 20px;
-    flex: 1;
-    margin-right: 10px
-  }
-  
-  img {
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
+.container {
+  display: flex;
+  align-items: center;
+  width: 35%;
+  border-radius: 10px;
+  background: #ffffff;
+  margin: 2%;
+}
 
-  .messageXtime{
-    display: flex;
-    margin: 0%;
-   }
+.container-message {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: #ffffff;
+}
 
-  .container2{
-    width: 65%;
-    background-color: #ffffff;
-    height: 100%;
-  }
+.userMessage {
+  display: flex;
+  flex: auto;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .containerXcontainer2{
-    display: flex;
-    margin: 0%;
-  }
-  
-  /* Medium screen styles (min-width: 768px, max-width: 1023px) */
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .container {
-      width: 90%;
-      margin: 2%;
-      padding: 2%;
-    }
-  
-    .user {
-    
-      font-size: 12px;
-    }
-  
-    .message {
-      font-size: 15px;
-      height: 20px;
-      flex: 1;
-      margin-right: 10px
-    }
-  
-    img {
-      width: 47px;
-      height: 47px;
-    }
+.user {
+  font-size: 15px;
+  height: 25px;
+}
 
-    .messageXtime{
-      display: flex;
-      margin: 0%;
-     }
-    .container2{
-      display: none;
-    }
-  }
-  
-  /* Small screen styles (max-width: 767px) */
-  @media screen and (max-width: 767px) {
-    .container {
-      width: 90%;
-      margin: 2%;
-      padding: 2%;
-    }
-  
-    .user {
-      font-size: 12px;
-      height: 20px;
-      
-    }
-  
-    .message {
-      font-size: 15px;
-      height: 12px;
-      flex: 1;
-      margin-right: 10px
-
-    }
-  
-    img {
-      width: 47px;
-      height: 47px;
-    }
-
-   .messageXtime{
-    display: flex;
-    margin: 0%;
-   }
-   
-  }
-  
+img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 30px;
+}
