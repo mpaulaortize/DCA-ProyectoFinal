@@ -74,8 +74,6 @@ class ImgCard extends HTMLElement {
           </div>
       </section>
     `;
-
-    
     }
   }
 }
