@@ -15,3 +15,5 @@ export { default as Newnotification } from "./NewNotification/newnotification";
 export { default as NotificationMonth } from "./NotificationMonth/notificationMoth";
 export { default as SearchComponent } from "./searchComponent/Search";
 export {default as accountInfo} from "./accountInfo/accountInfo"
+export {default as MenuFeed} from "./menuPhone/menuFeed"
+export {default as MenuSearch} from "./menuPhone/menusearch"

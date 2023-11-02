@@ -1,6 +1,4 @@
 import "./screens/mainFeed/mainFeed";
-import indexStyle from "./index.css";
-
 import "./screens/profile/Profile";
 import "./screens/search/search";
 import "./screens/createAccount/createAccount";
@@ -32,9 +30,9 @@ class AppContainer extends HTMLElement {
     <section></section>
     
     `;
+    console.log(appState.screen);
 
     switch (appState.screen) {
-
       case Screens.LOGIN:
         const createAccount = this.ownerDocument.createElement("create-account");
         this.shadowRoot?.appendChild(createAccount);
@@ -59,10 +57,10 @@ class AppContainer extends HTMLElement {
         this.shadowRoot?.appendChild(notificationScreen)
           break;
           
-      // case Screens.SEARCH:
-      //   const Search = this.ownerDocument.createElement("search-screen");
-      //   this.shadowRoot?.appendChild(Search);
-      //       break;  
+      case Screens.SEARCH:
+        const Search = this.ownerDocument.createElement("search-screen");
+        this.shadowRoot?.appendChild(Search);
+            break;  
 
       case Screens.USER_PROFILE:
         const Profile = this.ownerDocument.createElement("profile-screen");

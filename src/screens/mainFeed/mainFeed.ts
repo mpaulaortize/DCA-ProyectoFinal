@@ -9,6 +9,7 @@ import AudioCard, {Attribute as AudioCardAttribute,} from "../../components/audi
 import PostCard, {Attribute as PostCardCardAttribute,} from "../../components/post-Card/post-Card";
 import ImgCard, {Attribute as ImgCardAttribute,} from "../../components/main-ImgCard/main-ImgCard";
 import indexstyles from "./mainFeed.css"
+import { MenuFeed } from "../../components/export";
 
 class MainFeed extends HTMLElement {
   tweets: TweetCard[] = [];
@@ -106,28 +107,9 @@ class MainFeed extends HTMLElement {
       generalContainer.appendChild(mainCard);
     }
 
-    //   const remainingItems = data.length - this.dataIndex;
+    //const menuPhone = document.createElement("menu-feed") as MenuFeed;
+    //this.shadowRoot?.appendChild(menuPhone);
 
-    //   for (
-    //     let i = this.dataIndex;
-    //     i < this.dataIndex + Math.min(9, remainingItems);
-    //     i++
-    //   ) {
-    //     if (i < this.tweets.length) {
-    //       generalContainer.appendChild(this.tweets[i]);
-    //     }
-
-    //     if (i < this.card.length) {
-    //       generalContainer.appendChild(this.card[i]);
-    //     }
-
-    //     if (i < this.card.length) {
-    //       generalContainer.appendChild(this.post[i]);
-    //     }
-    //   }
-
-    //   this.dataIndex += 9;
-    // }
   }
 }
 

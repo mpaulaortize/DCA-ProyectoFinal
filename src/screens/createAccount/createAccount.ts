@@ -44,16 +44,16 @@ class createAccount extends HTMLElement {
     this.shadowRoot?.appendChild(createForm);
 
 
-    const button = this.ownerDocument.createElement('button')
-        button.innerText = "Create Account";
   
-        
-        button.addEventListener("click", async () => {
-            dispatch(navigate(Screens.DASHBOARD));
-            console.log(createAccount);
-            dispatch(await saveRecipe(createAccount));
-          });
-          this.shadowRoot?.appendChild(button);
+      
+
+    const Button = this.ownerDocument.createElement('button');
+    Button.innerText = "Create Account" ;
+    this.shadowRoot?.appendChild(Button);
+    Button.addEventListener("click", () => {
+        dispatch(navigate(Screens.DASHBOARD));
+      });
+
 
           const accountInfo = this.ownerDocument.createElement('account-info')
           this.shadowRoot?.appendChild(accountInfo)

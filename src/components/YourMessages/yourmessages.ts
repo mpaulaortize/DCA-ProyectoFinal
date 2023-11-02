@@ -21,7 +21,7 @@ ${messagesstyles}
 </style>
 
 <section>
-<img src="img/messagesIcono.png"></img>
+<img src="/img/messagesIcono.png"></img>
 <h1>Your messages</h1>
 <p>Send photos and private messages to a friend or a group </p>
 <button>Send message</button>
