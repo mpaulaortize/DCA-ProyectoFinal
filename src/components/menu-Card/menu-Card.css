@@ -1,7 +1,4 @@
 /* Default styles for screens wider than 1023px */
-.navbar {
-    display: none;
-  }
   
   .icon {
     display: flex;

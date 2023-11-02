@@ -46,26 +46,28 @@ class AppContainer extends HTMLElement {
         this.shadowRoot?.appendChild(mainScreen);
         break;
 
-      // case Screens.MESSAGESS:
-      //   const MessagesScreen = this.ownerDocument.createElement("messages-screen");
-      // MessagesScreen.classList.add("MessagesScreen");
-      //     break;
+      case Screens.MESSAGESS:
+        const MessagesScreen = this.ownerDocument.createElement("messages-screen");
+        MessagesScreen.classList.add("MessagesScreen");
+        this.shadowRoot?.appendChild(MessagesScreen);
+          break;
 
 
-      // case Screens.NOTIFICATION:
-      //   const notificationScreen = this.ownerDocument.createElement("notification-container");
-      //   notificationScreen.classList.add("notificationScreen");
-      //     break;
+      case Screens.NOTIFICATION:
+        const notificationScreen = this.ownerDocument.createElement("notification-container");
+        notificationScreen.classList.add("notificationScreen");
+        this.shadowRoot?.appendChild(notificationScreen)
+          break;
           
       // case Screens.SEARCH:
       //   const Search = this.ownerDocument.createElement("search-screen");
       //   this.shadowRoot?.appendChild(Search);
       //       break;  
 
-      // case Screens.USER_PROFILE:
-      //   const Profile = this.ownerDocument.createElement("profile-screen");
-      //   this.shadowRoot?.appendChild(Profile);
-      //         break;   
+      case Screens.USER_PROFILE:
+        const Profile = this.ownerDocument.createElement("profile-screen");
+        this.shadowRoot?.appendChild(Profile);
+              break;   
 
       default:
         break;
