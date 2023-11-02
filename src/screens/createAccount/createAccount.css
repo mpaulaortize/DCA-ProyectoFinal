@@ -1,0 +1,15 @@
+button {
+    padding: 20px 5px;
+    width: 30%;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    background-color: white;
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Make the button a block element to center it horizontally */
+    margin-bottom: 3%;
+    text-align: center; /* Center the text within the button */
+    line-height: 1; /* Vertically center the text within the button */
+}

@@ -60,12 +60,6 @@ class createForm extends HTMLElement {
 
           <label for="reenter-password">Re-enter Password:</label>
           <input type="password" id="reenter-password" name="reenter-password" placeholder= "At least 6 characters" required><br><br>
-
-          <button type="submit">Create Account</button>
-        </form>
-
-        <p>By creating an account, you agree to the Raw <a href="url" class="user-link">Terms of Service</a> and <a href="url" class="user-link">Privacy Policy</a></p>
-        <p>Already have an account? <a href="url" class="user-link">Log In</a></p>
       `;
     }
   }
