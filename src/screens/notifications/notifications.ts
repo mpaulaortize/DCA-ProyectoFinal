@@ -1,3 +1,45 @@
+import {datanotifications} from "../../components/notification/dataNotification";
+import NotificationCard, {Attribute as NotificationCardAttribute,} from "../../components/notification/notification";
+import MenuCard, { Attribute as MenuCardAttribute,} from "../../components/menu-Card/menu-Card";
+import "../../components/export"
+import indexstyles from "./notifications.css"
+import { MenuNotification } from "../../components/export";
+
+    class NotificationContainer extends HTMLElement {
+    notification: NotificationCard[] = [];
+    
+    constructor() {
+      super();
+      this.attachShadow({ mode: "open"});
+  
+      datanotifications.forEach((notification) => {
+        const notificationsCard = this.ownerDocument.createElement("notification-card" )as NotificationCard;
+        notificationsCard.setAttribute(NotificationCardAttribute.username, notification.username);
+        notificationsCard.setAttribute(NotificationCardAttribute.notificationtype, notification.notificationtype)
+        notificationsCard.setAttribute(NotificationCardAttribute.img, notification.img)
+        notificationsCard.setAttribute(NotificationCardAttribute.time, notification.time)
+        this.notification.push(notificationsCard);
+      });
+      
+
+    }
+  
+      
+  
+    connectedCallback() {
+      this.render();
+      console.log(this.notification);
+      
+    }
+  
+    render() {
+      if (this.shadowRoot)this.shadowRoot.innerHTML = ``
+      const styleElement = document.createElement("style");
+      styleElement.textContent = indexstyles;
+      this.shadowRoot?.appendChild(styleElement);
+
+        const menucard = this.ownerDocument.createElement("menu-card") as MenuCard;
+
 import { datanotifications } from "../../components/notification/dataNotification";
 import NotificationCard, {
   Attribute as NotificationCardAttribute,
@@ -51,6 +93,7 @@ class NotificationContainer extends HTMLElement {
     this.shadowRoot?.appendChild(styleElement);
 
     const menucard = this.ownerDocument.createElement("menu-card") as MenuCard;
+
     menucard.setAttribute(MenuCardAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(menucard);
 
@@ -86,8 +129,26 @@ class NotificationContainer extends HTMLElement {
     });
 
     const lineSearch = document.createElement("div");
+
+     lineSearch.classList.add(`lineSearch`)
+     this.shadowRoot?.appendChild(lineSearch);
+
+     const title2 = document.createElement("h1");
+     title2.textContent = "This month"
+     title2.classList.add("title2");
+     this.shadowRoot?.appendChild(title2);
+    
+     const notificationmonth = this.ownerDocument.createElement("notification-month");
+     this.shadowRoot?.appendChild(notificationmonth);
+
+
+     const menuNotification = document.createElement("menu-notif") as MenuNotification;
+     this.shadowRoot?.appendChild(menuNotification);
+
+
     lineSearch.classList.add(`lineSearch`);
     this.shadowRoot?.appendChild(lineSearch);
+
 
     const title2 = document.createElement("h1");
     title2.textContent = "This month";

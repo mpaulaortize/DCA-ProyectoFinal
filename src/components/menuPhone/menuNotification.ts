@@ -1,4 +1,4 @@
-import MenuStyle from "./menu-Card.css";
+import MenuStyle from "./Menu.css";
 import { dispatch } from "../../store/index";
 import { navigate } from "../../store/actions";
 import { Screens } from "../../types/store";
@@ -8,8 +8,8 @@ import { Screens } from "../../types/store";
 export enum Attribute {
   "user" = "user",
 }
-   
-class MenuCard extends HTMLElement {
+
+class MenuNotification extends HTMLElement {
   publication?: string;
   likes?: string;
   user?: string;
@@ -54,35 +54,41 @@ class MenuCard extends HTMLElement {
       this.shadowRoot?.appendChild(styleElement);
 
 
-    const containerLogo = this.ownerDocument.createElement("div")
-    containerLogo.classList.add("icon"); 
+    const container= this.ownerDocument.createElement("div")
+    container.classList.add("generalContainer");
+    this.shadowRoot?.appendChild(container);
 
-    const logo= this.ownerDocument.createElement('img');
-    logo.src = '/img/raw.png';
-    logo.classList.add("logo-completo");
-    containerLogo.appendChild(logo);
-   logo.addEventListener("click", () => {
-      dispatch(navigate(Screens.DASHBOARD));
-    });
+    const listIcons = this.ownerDocument.createElement("ul")
+    listIcons.classList.add("list");
     
-
-    this.shadowRoot?.appendChild(containerLogo);
-
-    const left = this.ownerDocument.createElement("div")
-    left.classList.add("left");
+    const searchButton = this.ownerDocument.createElement('img');
+    searchButton.src = '/img/Iconbuscar.png';
+    searchButton.classList.add("icons");
+    listIcons.appendChild(searchButton);
+    searchButton.addEventListener("click", () => {
+        dispatch(navigate(Screens.SEARCH));
+      });
 
     const notificationButton = this.ownerDocument.createElement('img');
     notificationButton.src = '/img/notifications.png';
-    notificationButton.classList.add("icons");
-    left.appendChild(notificationButton);
+    notificationButton.classList.add("iconsSelection");
+    listIcons.appendChild(notificationButton);
     notificationButton.addEventListener("click", () => {
         dispatch(navigate(Screens.NOTIFICATION));
       });
 
+      const homeButton = this.ownerDocument.createElement('img');
+      homeButton.src = '/img/homenormal.png';
+      homeButton.classList.add("icons");
+      listIcons.appendChild(homeButton);
+      homeButton.addEventListener("click", () => {
+          dispatch(navigate(Screens.DASHBOARD));
+        });
+
     const messageButton = this.ownerDocument.createElement('img');
-    messageButton.src = '/img/messages.png';
+    messageButton.src = '/img/Iconmessages.png';
     messageButton.classList.add("icons");
-    left.appendChild(messageButton);
+    listIcons.appendChild(messageButton);
     messageButton.addEventListener("click", () => {
         dispatch(navigate(Screens.MESSAGESS));
       });
@@ -90,16 +96,16 @@ class MenuCard extends HTMLElement {
     const profileButton = this.ownerDocument.createElement('img');
     profileButton.src = 'https://m.media-amazon.com/images/I/91LYRChMy-L._SX1248_CR0%2C0%2C1248%2C1248_.jpg';
     profileButton.classList.add("user");
-    left.appendChild(profileButton);
+    listIcons.appendChild(profileButton);
     profileButton.addEventListener("click", () => {
         dispatch(navigate(Screens.USER_PROFILE));
       });
       
-    containerLogo.appendChild(left)
+    container.appendChild(listIcons)
   }}
 
   }
 
 
-customElements.define("menu-card", MenuCard);
-export default MenuCard;
+customElements.define("menu-notif", MenuNotification);
+export default MenuNotification;

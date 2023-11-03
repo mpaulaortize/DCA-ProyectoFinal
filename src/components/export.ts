@@ -14,6 +14,13 @@ export { default as YourMessages } from "./YourMessages/yourmessages";
 export { default as Newnotification } from "./NewNotification/newnotification";
 export { default as NotificationMonth } from "./NotificationMonth/notificationMoth";
 export { default as SearchComponent } from "./searchComponent/Search";
+export {default as accountInfo} from "./accountInfo/accountInfo"
+export {default as MenuFeed} from "./menuPhone/menuFeed"
+export {default as MenuSearch} from "./menuPhone/menusearch"
+export {default as MenuNotification} from "./menuPhone/menuNotification"
+export {default as MenuMessage} from "./menuPhone/menuMessage"
+export {default as MenuProfile} from "./menuPhone/menuProfile"
 export { default as shareItems } from "./share-items/share-items";
 export { default as accountSettings } from "./account-Settings/account-Settings";
 export { default as changePassword } from "./change-Password/change-password";
+

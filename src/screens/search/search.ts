@@ -7,6 +7,7 @@ import { datasearchGrid } from "../../components/search-Grid/datasearch";
 import searchGrid, {
   Attribute as searchGridAttribute,
 } from "../../components/search-Grid/search-Grid";
+import { MenuSearch } from "../../components/export";
 
 class Search extends HTMLElement {
   message: searchGrid[] = [];
@@ -45,6 +46,8 @@ class Search extends HTMLElement {
       console.log(photo);
       this.shadowRoot?.appendChild(photo);
     });
+   const menuPhone = document.createElement("menu-search") as MenuSearch;
+   this.shadowRoot?.appendChild(menuPhone);
   }
 }
 

@@ -18,6 +18,18 @@ class YourMessages extends HTMLElement {
       ${messagesstyles}
     </style>
 
+
+<section>
+<img src="/img/messagesIcono.png"></img>
+<h1>Your messages</h1>
+<p>Send photos and private messages to a friend or a group </p>
+<button>Send message</button>
+</section>
+`
+  }}}
+  customElements.define("your-messages", YourMessages );
+  export default YourMessages
+
     <section>
       <img src="img/messagesIcono.png">
       
@@ -31,3 +43,4 @@ class YourMessages extends HTMLElement {
 }
 customElements.define("your-messages", YourMessages);
 export default YourMessages;
+
