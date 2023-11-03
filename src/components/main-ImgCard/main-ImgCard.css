@@ -27,9 +27,10 @@ p {
   padding: 0% 0% 3% 3%;
 }
 
-a {
+.inputComment {
   text-decoration: none;
-  color: #c4c4c4;
+  color: #969696;
+  border: none;
 }
 
 .icon {
@@ -47,6 +48,13 @@ a {
 .right img {
   width: 6%;
   margin: 0%;
+}
+
+.buttoncommet{
+  background: #f0fe6d;
+  border-radius: 50%;
+  border: none;
+  color: #f0fe6d;
 }
 
 /* Estilo para el modal */
