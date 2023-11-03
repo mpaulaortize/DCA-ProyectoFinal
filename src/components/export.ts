@@ -16,3 +16,4 @@ export { default as NotificationMonth } from "./NotificationMonth/notificationMo
 export { default as SearchComponent } from "./searchComponent/Search";
 export { default as shareItems } from "./share-items/share-items";
 export { default as accountSettings } from "./account-Settings/account-Settings";
+export { default as changePassword } from "./change-Password/change-password";

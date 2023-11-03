@@ -8,6 +8,7 @@ import "./screens/notifications/notifications";
 import "./screens/message/message";
 import "./screens/sharescreen/sharescreen";
 import "./screens/settings/settings";
+import "./screens/passwordScreen/passwordScreen";
 
 //import "./components/export"
 
@@ -64,6 +65,11 @@ class AppContainer extends HTMLElement {
       const settings = this.ownerDocument.createElement("settings-screen");
       this.shadowRoot?.appendChild(settings);
       Profile.classList.add("settingsscreen");
+
+      const passwordScreen =
+        this.ownerDocument.createElement("password-screen");
+      this.shadowRoot?.appendChild(passwordScreen);
+      Profile.classList.add("passwordscreen");
     }
   }
 }
