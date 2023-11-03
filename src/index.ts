@@ -83,6 +83,11 @@ class AppContainer extends HTMLElement {
             this.shadowRoot?.appendChild(passwordScreen);
           break;
 
+          case Screens.SHARESCREEN:
+            const sharescreen = this.ownerDocument.createElement("share-screen");
+            this.shadowRoot?.appendChild(sharescreen);
+          break;
+
         default:
           break;
       }
@@ -121,9 +126,9 @@ class AppContainer extends HTMLElement {
   //MessagesScreen.classList.add("MessagesScreen");
   //this.shadowRoot?.appendChild(MessagesScreen);
 
-  //const sharescreen = this.ownerDocument.createElement("share-screen");
-  //this.shadowRoot?.appendChild(sharescreen);
-  //Profile.classList.add("sharescreen");
+  // const sharescreen = this.ownerDocument.createElement("share-screen");
+  // this.shadowRoot?.appendChild(sharescreen);
+  
 
   //const settings = this.ownerDocument.createElement("settings-screen");
   //this.shadowRoot?.appendChild(settings);

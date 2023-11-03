@@ -1,4 +1,5 @@
 import CardStyle from "./main-ImgCard.css";
+const users = ["@fashionista_chic", "@pet_lover", "@music_enthusiast", "@bookworm_reader"];
 
 export enum Attribute {
   "publication" = "publication",
@@ -51,29 +52,130 @@ class ImgCard extends HTMLElement {
     <style>
         ${CardStyle}
     </style>
+`;
+const section = this.ownerDocument.createElement('section');
+const bodyCard = this.ownerDocument.createElement('div');
+bodyCard.className = 'body-card';
 
-    <section>
-        <div class="body-card">
-          <img class="post-img" src="${this.publication}"/>
+const postImage = this.ownerDocument.createElement('img');
+postImage.className = 'post-img';
+postImage.src = `${this.publication}`;
 
-          <div class="icon">
-            <div class="right">
-              <img src="/img/Icondefault.png"/>
-              <img src="/img/Iconcomment.png"/>
-              <img src="/img/Iconshare.png"/>
-            </div>
-              
-            <img src="/img/Iconsave.png"/>
+postImage.addEventListener('click', () => {
+  // Crear  ventana emergente para mostrar la imagen más grande
+  const modal = this.ownerDocument.createElement('div');
+  modal.classList.add('modal');
 
-          </div>
+  const modalImage = this.ownerDocument.createElement('img');
+  modalImage.src = `${this.publication}`; 
 
-          <div class="botton-info">
-            <span>${this.likes} likes</span>
-            <p><strong>${this.user}</strong><br>${this.caption}</p>
-            <a href="/html/">Add a comment</a>
-          </div>
-      </section>
-    `;
+  
+  modal.appendChild(modalImage);
+
+  
+  this.shadowRoot?.appendChild(modal);
+
+  
+  modal.addEventListener('click', () => {
+    modal.remove(); 
+  }); })
+
+
+
+const iconDiv = this.ownerDocument.createElement('div');
+iconDiv.className = 'icon';
+
+const rightDiv = this.ownerDocument.createElement('div');
+rightDiv.className = 'right';
+
+const iconDefault = this.ownerDocument.createElement('img');
+iconDefault.src = '/img/Icondefault.png';
+iconDefault.addEventListener('click', () => {
+  iconDefault.src = '/img/Icon.png';
+});
+
+const iconComment = this.ownerDocument.createElement('img');
+iconComment.src = '/img/Iconcomment.png';
+
+const iconShare = this.ownerDocument.createElement('img');
+iconShare.src = '/img/Iconshare.png';
+
+const iconSave = this.ownerDocument.createElement('img');
+iconSave.src = '/img/Iconsave.png';
+iconSave.addEventListener('click', () => {
+  iconSave.src = '/img/saveB.png';
+ 
+});
+
+const buttonInfo = this.ownerDocument.createElement('div');
+buttonInfo.className = 'button-info';
+
+const likesSpan = this.ownerDocument.createElement('span');
+likesSpan.textContent = `${this.likes} likes`;
+
+const userInfo = this.ownerDocument.createElement('p');
+const userName = this.ownerDocument.createElement('strong');
+userName.textContent = `${this.user}`;
+
+
+
+
+
+
+const userCaption = this.ownerDocument.createElement('br');
+const captionText = this.ownerDocument.createElement('p');
+captionText.textContent = `${this.caption}`;
+userInfo.appendChild(userName);
+userInfo.appendChild(userCaption);
+userInfo.appendChild(captionText);
+
+
+
+const inputContainer = this.ownerDocument.createElement("div");
+inputContainer.classList.add("inputContainer");
+
+const addCommentLink = this.ownerDocument.createElement('input');
+addCommentLink.classList.add("inputComment");
+addCommentLink.placeholder = 'Add a comment';
+
+const submitButton = this.ownerDocument.createElement("button");
+submitButton.classList.add("buttoncommet");
+submitButton.innerText = ".";
+
+
+submitButton.addEventListener("click", () => {
+  const comment = addCommentLink.value;
+  if (comment) {
+    const randomUser = users[Math.floor(Math.random() * users.length)];
+    const newComment = this.ownerDocument.createElement("p");
+    newComment.innerText = `${randomUser}: ${comment}`;
+    inputContainer.appendChild(newComment);
+    addCommentLink.value = "";
+  }
+});
+
+
+
+
+section.appendChild(bodyCard);
+bodyCard.appendChild(postImage);
+bodyCard.appendChild(iconDiv);
+iconDiv.appendChild(rightDiv);
+rightDiv.appendChild(iconDefault);
+rightDiv.appendChild(iconComment);
+rightDiv.appendChild(iconShare);
+iconDiv.appendChild(iconSave);
+bodyCard.appendChild(buttonInfo);
+buttonInfo.appendChild(likesSpan);
+buttonInfo.appendChild(userInfo);
+buttonInfo.appendChild(inputContainer);
+buttonInfo.appendChild(addCommentLink);
+buttonInfo.appendChild(submitButton);
+
+
+// Agrega la sección al shadow DOM
+this.shadowRoot.appendChild(section);
+    
     }
   }
 }

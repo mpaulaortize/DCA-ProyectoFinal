@@ -1,7 +1,4 @@
-import { data } from "./data";
-
-//Importamos nuestro firebase
-//import firebase from "../../utils/firebase";
+import { getUserData } from "../../utils/firebase";
 
 import IndexStyle from "./mainFeed.css";
 import { dataAudio } from "../../components/audio-Card/dataAudio";
@@ -96,6 +93,33 @@ class MainFeed extends HTMLElement {
       "https://m.media-amazon.com/images/I/91LYRChMy-L._SX1248_CR0%2C0%2C1248%2C1248_.jpg"
     );
     generalContainer.appendChild(postcard);
+
+    generalContainer.appendChild(postcard);
+
+    postcard.addEventListener("click", () => {
+      const generalContainer = this.shadowRoot?.querySelector(".general");
+    
+      // Agrega un nuevo TweetCard
+      const newTweetCard = this.ownerDocument.createElement("tweet-card") as TweetCard;
+      newTweetCard.setAttribute(TweetCardAttribute.user, "@traveler_adventures");
+      newTweetCard.setAttribute(TweetCardAttribute.message, "I go to the beach!");
+      newTweetCard.setAttribute(TweetCardAttribute.img, "https://i.pinimg.com/564x/08/09/5a/08095a891a2c668646b10975e6ab561e.jpg");
+      generalContainer?.appendChild(newTweetCard);
+    
+      // Agrega un nuevo AudioCard
+      const newAudioCard = this.ownerDocument.createElement("audio-card") as AudioCard;
+      newAudioCard.setAttribute(AudioCardAttribute.img, "https://i.pinimg.com/564x/08/09/5a/08095a891a2c668646b10975e6ab561e.jpg");
+      generalContainer?.appendChild(newAudioCard);
+    
+      // Agrega un nuevo ImgCard
+      const newImgCard = this.ownerDocument.createElement("main-imgcard") as ImgCard;
+      newImgCard.setAttribute(ImgCardAttribute.user, "@fashionista_chic");
+      newImgCard.setAttribute(ImgCardAttribute.likes, "3000");
+      newImgCard.setAttribute(ImgCardAttribute.caption, "Sushi feast for dinner! 😋");
+      newImgCard.setAttribute(ImgCardAttribute.publication, "https://i.pinimg.com/736x/96/18/57/9618575d1e790be40cbd79785f905021.jpg");
+      generalContainer?.appendChild(newImgCard);
+    });
+    
 
     for (let i = 0; i < dataTweet.length; i++) {
       const tweetCard = this.ownerDocument.createElement(

@@ -1,4 +1,7 @@
 import poststyles from "./post-Card.css";
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 export enum Attribute {
   "user" = "user",
@@ -49,27 +52,62 @@ class PostCard extends HTMLElement {
             ${poststyles}
           </style>
             
-          <section class="container">
-            <section class="userMessage">
-              <div class="user">
-                <p>${this.user}</p>
-              </div>
-              <div class="message">
-                <h2>${this.comment}</h2>
-              </div>
-            </section>
+  `
+  const container = this.ownerDocument.createElement('section');
+  container.className = "container";
 
-            <section class="roundComponents">
-              <img class="profileimg" src="${this.img}">
-              <div class="plus">
-                <img class="imgPlus" src="/img/plus.png">
-              </div>
-            </section>
-          </section>
-      `;
-    }
+  const userMessage = this.ownerDocument.createElement('section');
+  userMessage.className = "userMessage";
+
+  const userDiv = this.ownerDocument.createElement('div');
+  userDiv.className = "user";
+  const userParagraph = this.ownerDocument.createElement('p');
+  userParagraph.textContent = ("@a.miller"); // Accede a la propiedad user
+  userDiv.appendChild(userParagraph);
+
+  const messageDiv = this.ownerDocument.createElement('div');
+  messageDiv.className = "message";
+  const messageHeader = this.ownerDocument.createElement('h2');
+  messageHeader.textContent = "Mix&Match"; // Accede a la propiedad comment
+  messageDiv.appendChild(messageHeader);
+
+  userMessage.appendChild(userDiv);
+  userMessage.appendChild(messageDiv);
+
+  const roundComponents = this.ownerDocument.createElement('section');
+  roundComponents.className = "roundComponents";
+
+  const profileImage = this.ownerDocument.createElement('img');
+  profileImage.className = "profileimg";
+  profileImage.src = "https://m.media-amazon.com/images/I/91LYRChMy-L._SX1248_CR0%2C0%2C1248%2C1248_.jpg"; 
+
+  const plusDiv = this.ownerDocument.createElement('div');
+  plusDiv.className = "plus";
+  plusDiv.addEventListener("click", () => {
+    dispatch(navigate(Screens.SHARESCREEN));
+  });
+  const plusImage = this.ownerDocument.createElement('img');
+  plusImage.className = "imgPlus";
+  plusImage.src = "/img/plus.png";
+
+  plusDiv.appendChild(plusImage);
+  plusImage.addEventListener("click", () => {
+    dispatch(navigate(Screens.SHARESCREEN));
+  });
+
+  roundComponents.appendChild(profileImage);
+  roundComponents.appendChild(plusDiv);
+
+  container.appendChild(userMessage);
+  container.appendChild(roundComponents);
+
+  const styleElement = document.createElement("style");
+  styleElement.textContent = poststyles;
+
+  this.shadowRoot.appendChild(styleElement);
+  this.shadowRoot.appendChild(container);
   }
-}
+}}
 
 customElements.define("post-card", PostCard);
 export default PostCard;
