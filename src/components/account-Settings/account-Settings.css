@@ -5,7 +5,7 @@
 form {
   display: flex;
   flex-direction: column;
-  padding: 0% 20%;
+  padding: 0% 30%;
 }
 
 .input-container {
@@ -37,11 +37,6 @@ input::placeholder {
   font-size: 20px;
 }
 
-.button-container {
-  display: flex;
-  flex-direction: row;
-}
-
 button {
   padding: 30px 5px;
   width: 100%;
@@ -52,8 +47,12 @@ button {
   color: black;
   background-color: white;
   margin-left: 1%;
-  margin-right: 1%;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+}
+
+.change-password-button {
+  background-color: #fec2dc;
+  font-weight: 600;
 }
 
 .cancel-button {

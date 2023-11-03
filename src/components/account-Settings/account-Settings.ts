@@ -80,11 +80,9 @@ class accountSettings extends HTMLElement {
             <input class="phonenumber-input" type="text" id="phone" name="phone" placeholder="304 540 6396">
           </div>
 
-          <div>
-            <p>If you want to change the password. <a href="url" class="user-link">Click here</a></p>
-          </div>
-
+          
           <div class="button-container">
+            <button type="button" class="change-password-button">Change Password</button>
             <button type="submit" class="save-changes-button">Save Changes</button>
             <button type="button" class="cancel-button">Cancel</button>
           </div>
