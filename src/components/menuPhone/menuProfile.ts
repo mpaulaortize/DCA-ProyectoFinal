@@ -9,7 +9,7 @@ export enum Attribute {
   "user" = "user",
 }
 
-class MenuSearch extends HTMLElement {
+class MenuProfile extends HTMLElement {
   publication?: string;
   likes?: string;
   user?: string;
@@ -62,8 +62,8 @@ class MenuSearch extends HTMLElement {
     listIcons.classList.add("list");
     
     const searchButton = this.ownerDocument.createElement('img');
-    searchButton.src = '/img/searchSelectd.png';
-    searchButton.classList.add("iconsSelection");
+    searchButton.src = '/img/Iconbuscar.png';
+    searchButton.classList.add("icons");
     listIcons.appendChild(searchButton);
     searchButton.addEventListener("click", () => {
         dispatch(navigate(Screens.SEARCH));
@@ -95,18 +95,17 @@ class MenuSearch extends HTMLElement {
 
     const profileButton = this.ownerDocument.createElement('img');
     profileButton.src = 'https://m.media-amazon.com/images/I/91LYRChMy-L._SX1248_CR0%2C0%2C1248%2C1248_.jpg';
-    profileButton.classList.add("user");
+    profileButton.classList.add("userSelection");
     listIcons.appendChild(profileButton);
     profileButton.addEventListener("click", () => {
         dispatch(navigate(Screens.USER_PROFILE));
       });
       
     container.appendChild(listIcons)
-  }
-}
+  }}
 
   }
 
 
-customElements.define("menu-search", MenuSearch);
-export default MenuSearch;
+customElements.define("menu-profile", MenuProfile);
+export default MenuProfile;

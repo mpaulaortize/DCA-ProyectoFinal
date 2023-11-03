@@ -107,8 +107,8 @@ class MainFeed extends HTMLElement {
       generalContainer.appendChild(mainCard);
     }
 
-    //const menuPhone = document.createElement("menu-feed") as MenuFeed;
-    //this.shadowRoot?.appendChild(menuPhone);
+    const menuPhone = document.createElement("menu-feed") as MenuFeed;
+    this.shadowRoot?.appendChild(menuPhone);
 
   }
 }

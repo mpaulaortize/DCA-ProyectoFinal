@@ -17,3 +17,6 @@ export { default as SearchComponent } from "./searchComponent/Search";
 export {default as accountInfo} from "./accountInfo/accountInfo"
 export {default as MenuFeed} from "./menuPhone/menuFeed"
 export {default as MenuSearch} from "./menuPhone/menusearch"
+export {default as MenuNotification} from "./menuPhone/menuNotification"
+export {default as MenuMessage} from "./menuPhone/menuMessage"
+export {default as MenuProfile} from "./menuPhone/menuProfile"

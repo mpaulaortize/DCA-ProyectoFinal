@@ -38,6 +38,15 @@
     object-fit: cover;
     border: 2px solid #b8fe67; 
   }
+
+  .userSelection{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%; 
+    cursor: pointer;
+    object-fit: cover;
+    border: 2px solid #b8fe67; 
+  }
 }
   @media screen and (min-width: 768px) and (max-width: 3000px) {
     .generalContainer{

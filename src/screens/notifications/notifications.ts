@@ -3,6 +3,7 @@ import NotificationCard, {Attribute as NotificationCardAttribute,} from "../../c
 import MenuCard, { Attribute as MenuCardAttribute,} from "../../components/menu-Card/menu-Card";
 import "../../components/export"
 import indexstyles from "./notifications.css"
+import { MenuNotification } from "../../components/export";
 
     class NotificationContainer extends HTMLElement {
     notification: NotificationCard[] = [];
@@ -87,7 +88,8 @@ import indexstyles from "./notifications.css"
      this.shadowRoot?.appendChild(notificationmonth);
 
 
-
+     const menuNotification = document.createElement("menu-notif") as MenuNotification;
+     this.shadowRoot?.appendChild(menuNotification);
 
     }
 

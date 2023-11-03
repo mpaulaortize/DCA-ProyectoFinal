@@ -43,8 +43,8 @@ class Search extends HTMLElement {
       console.log(photo);
       this.shadowRoot?.appendChild(photo);
     });
-   // const menuPhone = document.createElement("menu-search") as MenuSearch;
-   // this.shadowRoot?.appendChild(menuPhone);
+   const menuPhone = document.createElement("menu-search") as MenuSearch;
+   this.shadowRoot?.appendChild(menuPhone);
   }
 }
 

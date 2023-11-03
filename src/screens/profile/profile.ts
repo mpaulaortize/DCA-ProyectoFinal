@@ -10,6 +10,8 @@ import { dataGrid } from "../../components/feed-Grid/dataprofile";
 import profileGrid, {
   Attribute as profileGridAttribute,
 } from "../../components/feed-Grid/profile-Grid";
+import { MenuProfile } from "../../components/export";
+
 
 class Profile extends HTMLElement {
   message: profileGrid[] = [];
@@ -51,6 +53,9 @@ class Profile extends HTMLElement {
       console.log(photo);
       this.shadowRoot?.appendChild(photo);
     });
+
+    const MenuProfile = document.createElement("menu-profile") as MenuProfile;
+    this.shadowRoot?.appendChild(MenuProfile);
   }
 }
 

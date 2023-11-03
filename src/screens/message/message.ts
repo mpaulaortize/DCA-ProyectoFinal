@@ -3,6 +3,7 @@ import MessageCard, { Attribute as MessageCardAttribute,} from "../../components
 import MenuCard, { Attribute as MenuCardAttribute,} from "../../components/menu-Card/menu-Card";
 import {datamessage } from "../../components/message/messagedata";
 import "../../components/export"
+import { MenuNotification } from "../../components/export";
 
 
 class Messages extends HTMLElement {
@@ -65,6 +66,9 @@ message: MessageCard[] = [];
     const yourmessages = this.ownerDocument.createElement("your-messages");
     yourmessages.classList.add("yourmessage")
     general.appendChild(yourmessages);
+
+    const menumessage = document.createElement("menu-message") as MenuNotification;
+     this.shadowRoot?.appendChild(menumessage);
     
   }
 }
