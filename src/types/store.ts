@@ -9,7 +9,8 @@ export enum Screens {
   SEARCH =  "SEARCH",
   USER_PROFILE = "USER_PROFILE",
   SETTINGS = "SETTINGS",
-  PASSWORD = "PASSWORD"
+  PASSWORD = "PASSWORD",
+  SHARESCREEN = "SHARESCREEN"
 }
 
 export type AppState = {
