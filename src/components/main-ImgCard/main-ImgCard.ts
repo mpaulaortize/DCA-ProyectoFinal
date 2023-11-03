@@ -51,29 +51,77 @@ class ImgCard extends HTMLElement {
     <style>
         ${CardStyle}
     </style>
+`;
+const section = this.ownerDocument.createElement('section');
+const bodyCard = this.ownerDocument.createElement('div');
+bodyCard.className = 'body-card';
 
-    <section>
-        <div class="body-card">
-          <img class="post-img" src="${this.publication}"/>
+const postImage = this.ownerDocument.createElement('img');
+postImage.className = 'post-img';
+postImage.src = `${this.publication}`;
 
-          <div class="icon">
-            <div class="right">
-              <img src="/img/Icondefault.png"/>
-              <img src="/img/Iconcomment.png"/>
-              <img src="/img/Iconshare.png"/>
-            </div>
-              
-            <img src="/img/Iconsave.png"/>
+const iconDiv = this.ownerDocument.createElement('div');
+iconDiv.className = 'icon';
 
-          </div>
+const rightDiv = this.ownerDocument.createElement('div');
+rightDiv.className = 'right';
 
-          <div class="botton-info">
-            <span>${this.likes} likes</span>
-            <p><strong>${this.user}</strong><br>${this.caption}</p>
-            <a href="/html/">Add a comment</a>
-          </div>
-      </section>
-    `;
+const iconDefault = this.ownerDocument.createElement('img');
+iconDefault.src = '/img/Icondefault.png';
+iconDefault.addEventListener('click', () => {
+  iconDefault.src = '/img/Icon.png';
+});
+
+const iconComment = this.ownerDocument.createElement('img');
+iconComment.src = '/img/Iconcomment.png';
+
+const iconShare = this.ownerDocument.createElement('img');
+iconShare.src = '/img/Iconshare.png';
+
+const iconSave = this.ownerDocument.createElement('img');
+iconSave.src = '/img/Iconsave.png';
+iconSave.addEventListener('click', () => {
+  iconSave.src = '/img/saveB.png';
+ 
+});
+
+const buttonInfo = this.ownerDocument.createElement('div');
+buttonInfo.className = 'button-info';
+
+const likesSpan = this.ownerDocument.createElement('span');
+likesSpan.textContent = `${this.likes} likes`;
+
+const userInfo = this.ownerDocument.createElement('p');
+const userName = this.ownerDocument.createElement('strong');
+userName.textContent = `${this.user}`;
+const userCaption = this.ownerDocument.createElement('br');
+const captionText = this.ownerDocument.createElement('p');
+captionText.textContent = `${this.caption}`;
+userInfo.appendChild(userName);
+userInfo.appendChild(userCaption);
+userInfo.appendChild(captionText);
+
+const addCommentLink = this.ownerDocument.createElement('a');
+addCommentLink.href = '/html/';
+addCommentLink.textContent = 'Add a comment';
+
+// Ahora, ensambla los elementos
+section.appendChild(bodyCard);
+bodyCard.appendChild(postImage);
+bodyCard.appendChild(iconDiv);
+iconDiv.appendChild(rightDiv);
+rightDiv.appendChild(iconDefault);
+rightDiv.appendChild(iconComment);
+rightDiv.appendChild(iconShare);
+iconDiv.appendChild(iconSave);
+bodyCard.appendChild(buttonInfo);
+buttonInfo.appendChild(likesSpan);
+buttonInfo.appendChild(userInfo);
+buttonInfo.appendChild(addCommentLink);
+
+// Agrega la sección al shadow DOM
+this.shadowRoot.appendChild(section);
+    
     }
   }
 }
