@@ -1,7 +1,7 @@
 import { data } from "./data";
 
 //Importamos nuestro firebase
-import firebase from "../../utils/firebase";
+//import firebase from "../../utils/firebase";
 
 import IndexStyle from "./mainFeed.css";
 import { dataAudio } from "../../components/audio-Card/dataAudio";
