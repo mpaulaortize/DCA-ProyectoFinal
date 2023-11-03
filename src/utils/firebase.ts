@@ -1,45 +1,47 @@
-//import { initializeApp } from "firebase/app";
-//import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { collection, addDoc,getDocs,where, setDoc, getFirestore, query } from "firebase/firestore";
+import { mainImgCard } from "../types/main-ImgCard";
+import firebaseConfig from "../services/firebaseConfig"
 
-//const firebaseConfig = {
-//apiKey: "AIzaSyBUvaFu_ChfaXinQGvRpqLjKv-fMC9a8W0",
-//authDomain: "dca-2023-2.firebaseapp.com",
-//projectId: "dca-2023-2",
-//storageBucket: "dca-2023-2.appspot.com",
-//messagingSenderId: "702077150740",
-//appId: "1:702077150740:web:ac7f99c5e0942e93436901",
-//};
 
-// Initialize Firebase
-//const app = initializeApp(firebaseConfig);
-//const db = getFirestore(app);
 
-//const addPosts = async (post: any) => {
-//try {
-//const where = collection(db, "main-ImgCard");
-//await addDoc(where, post);
-//console.log("Se añadio");
-//} catch (error) {
-//console.error(error);
-//}
-//};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-//const getPosts = async () => {
-//const querySnapshot = await getDocs(collection(db, "main-ImgCard"));
-//const transformed: any = [];
 
-//querySnapshot.forEach((doc) => {
-//const data = doc.data();
-//transformed.push({
-//id: doc.id,
-//...data,
-//});
-//});
+export const addPost = async (post:any) => {
+  try {
+    const postData = collection (db, "post");
+    await addDoc(postData,post)
+    console.log("Se añadio un post")
+    
+  } catch (error) {
+    console.error(error);
+    
+  }}
 
-//return transformed;
-//};
+const postCollection = collection(db, "user")
 
-//export default {
-//addPost,
-//getPosts,
-//};
+
+
+// Recupera los datos del usuario de Firebase 
+ export async function getUserData() {
+  const querySnapshot = await getDocs(postCollection);
+  const mainImgCardData: mainImgCard[] = [];
+  querySnapshot.forEach((doc) => {
+    const user = doc.data() as mainImgCard;
+    // Accede al ID del documento
+    const userId = doc.id;
+    
+    mainImgCardData.push({ ...user, user: userId });
+  });
+  return mainImgCardData;
+}
+
+  
+  
+
+export default {
+  getUserData
+
+}

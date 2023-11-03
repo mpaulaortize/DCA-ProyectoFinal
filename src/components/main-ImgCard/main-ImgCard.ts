@@ -79,6 +79,8 @@ postImage.addEventListener('click', () => {
     modal.remove(); 
   }); })
 
+
+
 const iconDiv = this.ownerDocument.createElement('div');
 iconDiv.className = 'icon';
 
@@ -113,6 +115,12 @@ likesSpan.textContent = `${this.likes} likes`;
 const userInfo = this.ownerDocument.createElement('p');
 const userName = this.ownerDocument.createElement('strong');
 userName.textContent = `${this.user}`;
+
+
+
+
+
+
 const userCaption = this.ownerDocument.createElement('br');
 const captionText = this.ownerDocument.createElement('p');
 captionText.textContent = `${this.caption}`;
