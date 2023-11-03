@@ -4,7 +4,7 @@ export enum Attribute {
   "user" = "user",
   "message" = "message",
   "img" = "img",
-  "time" = "time"
+  "time" = "time",
 }
 
 class MessageCard extends HTMLElement {
@@ -18,7 +18,7 @@ class MessageCard extends HTMLElement {
       user: null,
       message: null,
       img: null,
-      time: null
+      time: null,
     };
     return Object.keys(attrs);
   }
@@ -39,7 +39,6 @@ class MessageCard extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    
   }
 
   connectedCallback() {
@@ -55,23 +54,22 @@ class MessageCard extends HTMLElement {
           
             <section class="container">
             <section class="roundComponents">
-            <img class="imgprofiles" src="${this.img}"></img>
+            <img class="imgprofiles" src="${this.img}">
             </section>
 
-              <section class="general">
+            <section class="container-message">
+              <section class="userMessage">
                 <div class="user">
-                  <h2>${this.user}</h2>
-                  </div>
-                <section class="messageXtime">
+                  <h1>${this.user}</h1>
+                </div>
+            
                 <div class="message">
                   <p>${this.message}</p>
-                  </div>
-                <div class="time">
-                  <h6>${this.time}</h6>
-                  </div>
-                  </section>
-            
+                  <p>${this.time}</p>
+                </div>
+              </section>
             </section>
+            
         `;
     }
   }

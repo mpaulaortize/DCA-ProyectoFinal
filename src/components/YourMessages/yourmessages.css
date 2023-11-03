@@ -1,29 +1,23 @@
-*{
-    font-family: "Inter", sans-serif;
-    margin-bottom: 5%;
-    align-items: center;
-    
+* {
+  font-family: "Inter", sans-serif;
 }
 
-section{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 1530px; /* Ajusta la altura según tus necesidades */
-    background-color: #ffffff;
-    border-radius: 20px;
+section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 1530px; /* Ajusta la altura según tus necesidades */
+  background-color: #ffffff;
+  border-radius: 20px;
 }
 
-button{
-    background-color: black;
-    color: #ffffff;
-    font-size: medium;
-    border-radius: 12px;
-    width: 22%;
-    height: 50px;
+button {
+  background-color: black;
+  color: #ffffff;
+  font-size: medium;
+  border-radius: 12px;
+  width: 22%;
+  height: 50px;
 }
-
-
-

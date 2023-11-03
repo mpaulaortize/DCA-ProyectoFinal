@@ -1,14 +1,14 @@
 import indexstyles from "./createAccount.css";
 
-import createForm, {
-  Attribute as createFormAttribute,
-} from "../../components/createAccount-form/createAccount-form";
+import accountSettings, {
+  Attribute as accountSettingsAttribute,
+} from "../../components/account-Settings/account-Settings";
 import lowerMenu, {
   Attribute as lowerMenuAttribute,
 } from "../../components/lower-menu/lower-menu";
 
-class createAccount extends HTMLElement {
-  message: createForm[] = [];
+class settings extends HTMLElement {
+  message: accountSettings[] = [];
 
   constructor() {
     super();
@@ -22,18 +22,18 @@ class createAccount extends HTMLElement {
 
   render() {
     if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
-    const createForm = this.ownerDocument.createElement(
-      "create-form"
-    ) as createForm;
-    createForm.setAttribute(createFormAttribute.user, "@a.miller");
-    this.shadowRoot?.appendChild(createForm);
+    const accountSettings = this.ownerDocument.createElement(
+      "account-settings"
+    ) as accountSettings;
+    accountSettings.setAttribute(accountSettingsAttribute.user, "@a.miller");
+    this.shadowRoot?.appendChild(accountSettings);
 
     const lowerMenu = this.ownerDocument.createElement(
       "lower-menu"
-    ) as createForm;
+    ) as lowerMenu;
     lowerMenu.setAttribute(lowerMenuAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(lowerMenu);
   }
 }
 
-customElements.define("create-account", createAccount);
+customElements.define("settings-screen", settings);

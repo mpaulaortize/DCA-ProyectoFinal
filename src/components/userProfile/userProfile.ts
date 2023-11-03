@@ -59,7 +59,8 @@ class userProfile extends HTMLElement {
               <p class="user-description">| Sun, sand the sea and me.</p>
             </section>
             
-            <button type="button" href="" >Edit Profile</button>
+            
+            <button type="button" class="button-profile" href="" >Edit Profile</button>
       `;
     }
   }

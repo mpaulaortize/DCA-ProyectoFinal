@@ -1,68 +1,30 @@
-*{
-    font-family: "Inter", sans-serif;
-    color: rgb(255, 255, 255);
+.container {
+  margin: 2%;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .icon {
-    width: 20px; /* Ajusta el ancho del icono según tus necesidades */
-    height: 20px; /* Ajusta la altura del icono según tus necesidades */
-    margin-top: 1%;
-  }
-  
-  .search {
-    margin-left: 8px;
-  }
-  
-  .line {
-    width: 99%;
-    border-bottom: 1px solid   rgb(255, 255, 255);;
-    align-items: center;
-  }
-  
-  .iconSearch{
-    display: flex;
-  }
+.iconSearch {
+  display: flex;
+  align-items: center;
+  width: 97%;
+  border-bottom: 1px solid #ffffff;
+  padding: 8px;
+}
 
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .icon {
-        width: 20px; /* Ajusta el ancho del icono según tus necesidades */
-        height: 20px; /* Ajusta la altura del icono según tus necesidades */
-        margin: 1%;
-        margin-top: 3%;
-      }
-      
-      .search {
-        margin: 1%;
-    
-      }
-      
-      .line {
-        width: 97%;
-        border-bottom: 1px solid   rgb(255, 255, 255);;
-        align-items: center;
-      }
-  }
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
 
-  @media screen and (max-width: 767px){
-    .icon {
-        width: 20px; /* Ajusta el ancho del icono según tus necesidades */
-        height: 20px; /* Ajusta la altura del icono según tus necesidades */
-        margin-top: 4%;
-      }
-      
-      .search {
-        margin-left: 8px;
-      }
-      
-      .line {
-        width: 98%;
-        border-bottom: 1px solid   rgb(255, 255, 255);;
-        align-items: center;
-      }
-      
-  }
+#search-input {
+  border: none; /* Quita el borde predeterminado */
+  background: transparent; /* Fondo transparente */
+  padding: 8px; /* Espaciado interior */
+  margin: 8px 0; /* Espaciado exterior */
+}
+
+input::placeholder {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 20px;
+}
