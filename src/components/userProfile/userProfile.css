@@ -1,3 +1,4 @@
+/* Default styles for screens wider than 1023px */
 * {
   font-family: "Inter", sans-serif;
 }
@@ -39,7 +40,7 @@
 
 .button-profile {
   padding: 15px 5px;
-  width: 10%;
+  width: 20%;
   font-size: 15px;
   text-decoration: none;
   border: none;
@@ -47,13 +48,12 @@
   color: black;
   background-color: white;
   margin-bottom: 3%;
- 
 }
 
-.containerButton{
+.containerButton {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .container {
@@ -61,4 +61,54 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* Medium screen styles (min-width: 768px, max-width: 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Add your medium screen styles here */
+  .user-profile {
+    font-size: 20px;
+  }
+
+  .user {
+    width: 15%;
+    border-radius: 50%;
+    border: 3px solid #b8fe67;
+    margin-bottom: 10px;
+  }
+
+  .button-profile {
+    width: 25%;
+  }
+
+  .container-secondline {
+    display: flex;
+    align-items: center;
+    padding: 0%;
+  }
+}
+
+/* Small screen styles (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  /* Add your small screen styles here */
+  .user {
+    width: 20%;
+    border-radius: 50%;
+    border: 3px solid #b8fe67;
+    margin-bottom: 10px;
+  }
+
+  .user-profile {
+    font-size: 18px;
+  }
+
+  .button-profile {
+    width: 40%;
+  }
+
+  .container-secondline {
+    display: flex;
+    align-items: center;
+    padding: 0%;
+  }
 }

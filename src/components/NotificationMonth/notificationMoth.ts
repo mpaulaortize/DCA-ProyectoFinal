@@ -1,31 +1,24 @@
+import notificationStyle from "./notificationmonth.css";
 
-import notificationStyle from "./notificationmonth.css"
+class NotificationMonth extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+  }
 
-    class NotificationMonth extends HTMLElement {
+  connectedCallback() {
+    this.render();
+  }
 
-    
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open"});
-      
-
-    }
-  
-      
-  
-    connectedCallback() {
-      this.render();
-      
-    }
-  
-    render() {
-        if (this.shadowRoot)this.shadowRoot.innerHTML = ` 
+  render() {
+    if (this.shadowRoot)
+      this.shadowRoot.innerHTML = ` 
         <style>
             ${notificationStyle}
         </style>
        
         <section class="container">
-             <img class="userimg" src="/img/imgNotification.png"></img>
+             <img class="userimg" src="/img/imgNotification.png">
              <section class="general">
                     <div class="user">
                       <h3>maria_camila, Alejandro and others</h3>
@@ -43,10 +36,9 @@ import notificationStyle from "./notificationmonth.css"
           </section>
           </section>
 
-    `
-    }
+    `;
   }
-  
-  customElements.define("notification-month", NotificationMonth);
-  export default NotificationMonth
-  
+}
+
+customElements.define("notification-month", NotificationMonth);
+export default NotificationMonth;

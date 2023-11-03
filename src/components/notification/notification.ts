@@ -4,7 +4,7 @@ export enum Attribute {
   "username" = "username",
   "img" = "img",
   "notificationtype" = "notificationtype",
-  "time" = "time"
+  "time" = "time",
 }
 
 export default class NotificationCard extends HTMLElement {
@@ -18,7 +18,7 @@ export default class NotificationCard extends HTMLElement {
       username: null,
       img: null,
       notificationtype: null,
-      time: null
+      time: null,
     };
     return Object.keys(attrs);
   }
@@ -43,17 +43,17 @@ export default class NotificationCard extends HTMLElement {
 
   connectedCallback() {
     this.render();
-    
   }
 
   render() {
-    if (this.shadowRoot)this.shadowRoot.innerHTML = ` 
+    if (this.shadowRoot)
+      this.shadowRoot.innerHTML = ` 
     <style>
         ${notificationStyle}
     </style>
    
     <section class="container">
-         <img class="userimg" src="${this.img}"></img>
+         <img class="userimg" src="${this.img}">
          <section class="general">
                 <div class="user">
                   <h3>${this.username}</h3>
@@ -70,10 +70,8 @@ export default class NotificationCard extends HTMLElement {
       <img class="publication" src="https://i.pinimg.com/1200x/ed/1c/20/ed1c208e3ba9b32431eb62c1ba367759.jpg"<section></img>
       </section>
       </section>
-    `
-    }
+    `;
   }
-
+}
 
 customElements.define("notification-card", NotificationCard);
-
