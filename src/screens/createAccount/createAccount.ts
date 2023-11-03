@@ -40,10 +40,6 @@ class createAccount extends HTMLElement {
     createForm.setAttribute(createFormAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(createForm);
 
-
-  
-      
-
     const Button = this.ownerDocument.createElement('button');
     Button.innerText = "Create Account" ;
     this.shadowRoot?.appendChild(Button);
