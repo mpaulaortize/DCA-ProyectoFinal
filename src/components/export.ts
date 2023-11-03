@@ -15,3 +15,4 @@ export { default as Newnotification } from "./NewNotification/newnotification";
 export { default as NotificationMonth } from "./NotificationMonth/notificationMoth";
 export { default as SearchComponent } from "./searchComponent/Search";
 export { default as shareItems } from "./share-items/share-items";
+export { default as accountSettings } from "./account-Settings/account-Settings";

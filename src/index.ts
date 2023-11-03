@@ -7,6 +7,7 @@ import "./screens/createAccount/createAccount";
 import "./screens/notifications/notifications";
 import "./screens/message/message";
 import "./screens/sharescreen/sharescreen";
+import "./screens/settings/settings";
 
 //import "./components/export"
 
@@ -59,6 +60,10 @@ class AppContainer extends HTMLElement {
       const sharescreen = this.ownerDocument.createElement("share-screen");
       this.shadowRoot?.appendChild(sharescreen);
       Profile.classList.add("sharescreen");
+
+      const settings = this.ownerDocument.createElement("settings-screen");
+      this.shadowRoot?.appendChild(settings);
+      Profile.classList.add("settingsscreen");
     }
   }
 }
