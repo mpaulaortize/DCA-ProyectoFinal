@@ -14,18 +14,18 @@ label {
 }
 
 input {
-  border: none; /* Quita el borde predeterminado */
-  border-bottom: 1px solid #fff; /* Línea blanca debajo del campo */
-  background: transparent; /* Fondo transparente */
-  color: #fff; /* Color del texto */
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
   opacity: 0.2;
-  padding: 8px; /* Espaciado interior */
-  margin: 8px 0; /* Espaciado exterior */
+  padding: 8px;
+  margin: 8px 0;
 }
 
 input::placeholder {
-  color: #ffffff; /* Color del marcador de posición */
-  opacity: 0.5; /* Opacidad del marcador de posición */
+  color: #ffffff;
+  opacity: 0.5;
   font-size: 15px;
 }
 
@@ -45,7 +45,7 @@ h1 {
   color: white;
   margin-left: 40%;
   margin-bottom: 3%;
-  margin-top: 10%;
+  margin-top: 2%;
 }
 
 p {
@@ -54,8 +54,4 @@ p {
   margin-bottom: 3%;
   font-size: 18px;
   font-weight: 200;
-}
-
-a {
-  color: #ffffff;
 }
