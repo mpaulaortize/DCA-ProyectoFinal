@@ -47,6 +47,13 @@
   color: black;
   background-color: white;
   margin-bottom: 3%;
+ 
+}
+
+.containerButton{
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }
 
 .container {

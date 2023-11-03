@@ -1,4 +1,7 @@
 import profileStyles from "./userProfile.css";
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 export enum Attribute {
   "user" = "user",
@@ -60,9 +63,21 @@ class userProfile extends HTMLElement {
             </section>
             
             
-            <button type="button" class="button-profile" href="" >Edit Profile</button>
+            
       `;
+      const containerButton = this.ownerDocument.createElement('div');
+      containerButton.classList.add("containerButton");
+      this.shadowRoot?.appendChild(containerButton)
+      const Button = this.ownerDocument.createElement('button');
+      Button.textContent = "Edit Profile"
+      Button.classList.add("button-profile");
+      containerButton.appendChild(Button);
+      Button.addEventListener("click", () => {
+          dispatch(navigate(Screens.SETTINGS));
+        });
     }
+
+   
   }
 }
 

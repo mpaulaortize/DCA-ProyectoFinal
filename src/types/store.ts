@@ -7,7 +7,8 @@ export enum Screens {
   MESSAGESS = "MESSAGESS",
   NOTIFICATION = "NOTIFICATION",
   SEARCH =  "SEARCH",
-  USER_PROFILE = "USER_PROFILE"
+  USER_PROFILE = "USER_PROFILE",
+  SETTINGS = "SETTINGS"
 }
 
 export type AppState = {

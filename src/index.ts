@@ -73,6 +73,11 @@ class AppContainer extends HTMLElement {
           this.shadowRoot?.appendChild(Profile);
           break;
 
+          case Screens.SETTINGS:
+            const settings = this.ownerDocument.createElement("settings-screen");
+            this.shadowRoot?.appendChild(settings);
+          break;
+
         default:
           break;
       }
