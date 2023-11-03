@@ -60,6 +60,25 @@ const postImage = this.ownerDocument.createElement('img');
 postImage.className = 'post-img';
 postImage.src = `${this.publication}`;
 
+postImage.addEventListener('click', () => {
+  // Crear  ventana emergente para mostrar la imagen más grande
+  const modal = this.ownerDocument.createElement('div');
+  modal.classList.add('modal');
+
+  const modalImage = this.ownerDocument.createElement('img');
+  modalImage.src = `${this.publication}`; 
+
+  
+  modal.appendChild(modalImage);
+
+  
+  this.shadowRoot?.appendChild(modal);
+
+  
+  modal.addEventListener('click', () => {
+    modal.remove(); 
+  }); })
+
 const iconDiv = this.ownerDocument.createElement('div');
 iconDiv.className = 'icon';
 
