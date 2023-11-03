@@ -1,4 +1,5 @@
 import CardStyle from "./main-ImgCard.css";
+const users = ["@fashionista_chic", "@pet_lover", "@music_enthusiast", "@bookworm_reader"];
 
 export enum Attribute {
   "publication" = "publication",
@@ -60,6 +61,27 @@ const postImage = this.ownerDocument.createElement('img');
 postImage.className = 'post-img';
 postImage.src = `${this.publication}`;
 
+postImage.addEventListener('click', () => {
+  // Crear  ventana emergente para mostrar la imagen más grande
+  const modal = this.ownerDocument.createElement('div');
+  modal.classList.add('modal');
+
+  const modalImage = this.ownerDocument.createElement('img');
+  modalImage.src = `${this.publication}`; 
+
+  
+  modal.appendChild(modalImage);
+
+  
+  this.shadowRoot?.appendChild(modal);
+
+  
+  modal.addEventListener('click', () => {
+    modal.remove(); 
+  }); })
+
+
+
 const iconDiv = this.ownerDocument.createElement('div');
 iconDiv.className = 'icon';
 
@@ -94,6 +116,12 @@ likesSpan.textContent = `${this.likes} likes`;
 const userInfo = this.ownerDocument.createElement('p');
 const userName = this.ownerDocument.createElement('strong');
 userName.textContent = `${this.user}`;
+
+
+
+
+
+
 const userCaption = this.ownerDocument.createElement('br');
 const captionText = this.ownerDocument.createElement('p');
 captionText.textContent = `${this.caption}`;
@@ -101,11 +129,34 @@ userInfo.appendChild(userName);
 userInfo.appendChild(userCaption);
 userInfo.appendChild(captionText);
 
-const addCommentLink = this.ownerDocument.createElement('a');
-addCommentLink.href = '/html/';
-addCommentLink.textContent = 'Add a comment';
 
-// Ahora, ensambla los elementos
+
+const inputContainer = this.ownerDocument.createElement("div");
+inputContainer.classList.add("inputContainer");
+
+const addCommentLink = this.ownerDocument.createElement('input');
+addCommentLink.classList.add("inputComment");
+addCommentLink.placeholder = 'Add a comment';
+
+const submitButton = this.ownerDocument.createElement("button");
+submitButton.classList.add("buttoncommet");
+submitButton.innerText = ".";
+
+
+submitButton.addEventListener("click", () => {
+  const comment = addCommentLink.value;
+  if (comment) {
+    const randomUser = users[Math.floor(Math.random() * users.length)];
+    const newComment = this.ownerDocument.createElement("p");
+    newComment.innerText = `${randomUser}: ${comment}`;
+    inputContainer.appendChild(newComment);
+    addCommentLink.value = "";
+  }
+});
+
+
+
+
 section.appendChild(bodyCard);
 bodyCard.appendChild(postImage);
 bodyCard.appendChild(iconDiv);
@@ -117,7 +168,10 @@ iconDiv.appendChild(iconSave);
 bodyCard.appendChild(buttonInfo);
 buttonInfo.appendChild(likesSpan);
 buttonInfo.appendChild(userInfo);
+buttonInfo.appendChild(inputContainer);
 buttonInfo.appendChild(addCommentLink);
+buttonInfo.appendChild(submitButton);
+
 
 // Agrega la sección al shadow DOM
 this.shadowRoot.appendChild(section);
