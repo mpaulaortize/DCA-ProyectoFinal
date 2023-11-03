@@ -1,3 +1,4 @@
+/* Default styles for screens wider than 1023px */
 * {
   font-family: "Inter", sans-serif;
 }
@@ -5,7 +6,8 @@
 .container {
   display: flex;
   align-items: center;
-  width: 35%;
+  width: 40%;
+  height: 30%;
   border-radius: 10px;
   background: #ffffff;
   margin: 2%;
@@ -37,4 +39,21 @@ img {
   object-fit: cover;
   border-radius: 50%;
   margin: 30px;
+}
+
+/* Medium screen styles (min-width: 768px, max-width: 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Add your medium screen styles here */
+  .container {
+    width: 95%;
+  }
+}
+
+/* Small screen styles (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  /* Add your small screen styles here */
+  .container {
+    width: 95%;
+    margin: 2%;
+  }
 }
