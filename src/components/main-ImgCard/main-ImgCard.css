@@ -51,10 +51,11 @@ p {
 }
 
 .buttoncommet{
-  background: #f0fe6d;
+  background: white;
   border-radius: 50%;
   border: none;
-  color: #f0fe6d;
+  color: white;
+  margin-left: 5px;
 }
 
 /* Estilo para el modal */

@@ -94,6 +94,33 @@ class MainFeed extends HTMLElement {
     );
     generalContainer.appendChild(postcard);
 
+    generalContainer.appendChild(postcard);
+
+    postcard.addEventListener("click", () => {
+      const generalContainer = this.shadowRoot?.querySelector(".general");
+    
+      // Agrega un nuevo TweetCard
+      const newTweetCard = this.ownerDocument.createElement("tweet-card") as TweetCard;
+      newTweetCard.setAttribute(TweetCardAttribute.user, "@traveler_adventures");
+      newTweetCard.setAttribute(TweetCardAttribute.message, "I go to the beach!");
+      newTweetCard.setAttribute(TweetCardAttribute.img, "https://i.pinimg.com/564x/08/09/5a/08095a891a2c668646b10975e6ab561e.jpg");
+      generalContainer?.appendChild(newTweetCard);
+    
+      // Agrega un nuevo AudioCard
+      const newAudioCard = this.ownerDocument.createElement("audio-card") as AudioCard;
+      newAudioCard.setAttribute(AudioCardAttribute.img, "https://i.pinimg.com/564x/08/09/5a/08095a891a2c668646b10975e6ab561e.jpg");
+      generalContainer?.appendChild(newAudioCard);
+    
+      // Agrega un nuevo ImgCard
+      const newImgCard = this.ownerDocument.createElement("main-imgcard") as ImgCard;
+      newImgCard.setAttribute(ImgCardAttribute.user, "@fashionista_chic");
+      newImgCard.setAttribute(ImgCardAttribute.likes, "3000");
+      newImgCard.setAttribute(ImgCardAttribute.caption, "Sushi feast for dinner! 😋");
+      newImgCard.setAttribute(ImgCardAttribute.publication, "https://i.pinimg.com/736x/96/18/57/9618575d1e790be40cbd79785f905021.jpg");
+      generalContainer?.appendChild(newImgCard);
+    });
+    
+
     for (let i = 0; i < dataTweet.length; i++) {
       const tweetCard = this.ownerDocument.createElement(
         "tweet-card"

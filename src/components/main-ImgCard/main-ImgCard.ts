@@ -1,5 +1,5 @@
 import CardStyle from "./main-ImgCard.css";
-const users = ["@pepe", "@tatan_priv", "@soficm", "@alejandro"];
+const users = ["@fashionista_chic", "@pet_lover", "@music_enthusiast", "@bookworm_reader"];
 
 export enum Attribute {
   "publication" = "publication",

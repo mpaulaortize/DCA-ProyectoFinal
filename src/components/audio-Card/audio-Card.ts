@@ -60,9 +60,9 @@ songNameParagraph.classList.add('songName');
 songNameParagraph.style.display = 'none';
 container.appendChild(songNameParagraph);
 audioImg.addEventListener('click', () => {
-  // Muestra el nombre de la canción
-  songNameParagraph.textContent = 'Nombre de la canción'; // Reemplaza con el nombre real de la canción
-  songNameParagraph.style.display = 'block'; // Muestra el párrafo
+
+  songNameParagraph.textContent = 'Flowers-Miley Cryus'; 
+  songNameParagraph.style.display = 'block'; 
 });
 
 audioContainer.appendChild(audioImg);
@@ -76,21 +76,21 @@ const imgUser = this.ownerDocument.createElement('img');
 imgUser.classList.add('imgUser');
 imgUser.src = `${this.img}`;
 imgUser.addEventListener('click', () => {
-  // Crea una ventana emergente o un modal para mostrar la imagen más grande
+
   const modal = this.ownerDocument.createElement('div');
   modal.classList.add('modal');
 
-  // Crea una imagen más grande en el modal
+  
   const enlargedImg = this.ownerDocument.createElement('img');
   enlargedImg.src = `${this.img}`;
 
-  // Agrega la imagen más grande al modal
+  
   modal.appendChild(enlargedImg);
 
-  // Agrega el modal al DOM
+  
   this.shadowRoot?.appendChild(modal);
 
-  // Agrega un evento de clic para cerrar el modal cuando se hace clic fuera de la imagen
+ 
   modal.addEventListener('click', () => {
     this.shadowRoot?.removeChild(modal);
   });
