@@ -1,8 +1,5 @@
 import indexstyles from "./createAccount.css";
 
-import MenuCard, {
-  Attribute as MenuCardAttribute,
-} from "../../components/menu-Card/menu-Card";
 import createForm, {
   Attribute as createFormAttribute,
 } from "../../components/createAccount-form/createAccount-form";

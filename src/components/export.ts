@@ -20,3 +20,7 @@ export {default as MenuSearch} from "./menuPhone/menusearch"
 export {default as MenuNotification} from "./menuPhone/menuNotification"
 export {default as MenuMessage} from "./menuPhone/menuMessage"
 export {default as MenuProfile} from "./menuPhone/menuProfile"
+export { default as shareItems } from "./share-items/share-items";
+export { default as accountSettings } from "./account-Settings/account-Settings";
+export { default as changePassword } from "./change-Password/change-password";
+

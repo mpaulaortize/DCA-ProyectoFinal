@@ -39,6 +39,9 @@ class Search extends HTMLElement {
     menucard.setAttribute(MenuCardAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(menucard);
 
+    const search = this.ownerDocument.createElement("search-component");
+    this.shadowRoot?.appendChild(search);
+
     this.message.forEach((photo) => {
       console.log(photo);
       this.shadowRoot?.appendChild(photo);
