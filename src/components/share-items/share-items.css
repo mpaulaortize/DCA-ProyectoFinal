@@ -3,37 +3,28 @@
   font-family: "Inter", sans-serif;
 }
 
-.share-post {
-  display: flex;
-  align-items: center;
-  width: 30%;
-  border-radius: 10px;
-  background: #b8fe67;
-  margin: 1%;
-  margin-left: 33%;
-  padding: 1%;
-}
-
-.share-tweet {
-  display: flex;
-  align-items: center;
-  width: 30%;
-  border-radius: 10px;
-  background: #fec2dc;
-  margin: 1%;
-  margin-left: 33%;
-  padding: 1%;
-}
-
+.share-post,
+.share-tweet,
 .share-audio {
   display: flex;
   align-items: center;
   width: 30%;
   border-radius: 10px;
-  background: #f0fe6d;
   margin: 1%;
   margin-left: 33%;
   padding: 1%;
+}
+
+.share-post {
+  background: #b8fe67;
+}
+
+.share-tweet {
+  background: #fec2dc;
+}
+
+.share-audio {
+  background: #f0fe6d;
   margin-bottom: 10%;
 }
 
@@ -80,4 +71,27 @@ img {
 
 .roundComponents {
   display: flex;
+}
+
+/* Medium screen styles (min-width: 768px, max-width: 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Add your medium screen styles here */
+  .share-post,
+  .share-tweet,
+  .share-audio {
+    width: 50%;
+    margin-left: 23%;
+  }
+}
+
+/* Small screen styles (max-width: 767px) */
+@media screen and (max-width: 767px) {
+  /* Add your small screen styles here */
+  .share-post,
+  .share-tweet,
+  .share-audio {
+    width: 90%;
+    padding: 3%;
+    margin: 1% 3%;
+  }
 }
