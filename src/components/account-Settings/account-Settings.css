@@ -39,7 +39,7 @@ input::placeholder {
 
 button {
   padding: 30px 5px;
-  width: 100%;
+  width: 40%;
   font-size: 15px;
   text-decoration: none;
   border: none;
@@ -83,4 +83,12 @@ p {
 
 a {
   color: #ffffff;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: column; 
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center
+
 }

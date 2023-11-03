@@ -8,7 +8,8 @@ export enum Screens {
   NOTIFICATION = "NOTIFICATION",
   SEARCH =  "SEARCH",
   USER_PROFILE = "USER_PROFILE",
-  SETTINGS = "SETTINGS"
+  SETTINGS = "SETTINGS",
+  PASSWORD = "PASSWORD"
 }
 
 export type AppState = {

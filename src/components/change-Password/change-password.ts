@@ -1,4 +1,7 @@
 import indexStyle from "./change-password.css";
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/store";
 
 export enum Attribute {
   "user" = "user",
@@ -55,13 +58,32 @@ class changePassword extends HTMLElement {
           <label for="reenter-password">Re-enter New Password</label>
           <input type="password" id="reenter-password" name="reenter-password" placeholder= "At least 6 characters" required><br><br>
 
-          <div class="button-container">
-            <button type="button" class="change-password-button">Change Password</button>
-            <button type="button" class="cancel-button">Cancel</button>
-          </div>
-
         </form>
       `;
+
+const containerButton = this.ownerDocument.createElement('div');
+containerButton.classList.add("button-container");
+
+const changePasswordButton = this.ownerDocument.createElement('button');
+changePasswordButton.type = "button";
+changePasswordButton.classList.add("change-password-button");
+changePasswordButton.textContent = "Change Password";
+containerButton.appendChild(changePasswordButton);
+changePasswordButton.addEventListener("click", () => {
+  dispatch(navigate(Screens.USER_PROFILE));
+});
+
+
+const cancelButton = this.ownerDocument.createElement('button');
+cancelButton.type = "button";
+cancelButton.classList.add("cancel-button");
+cancelButton.textContent = "Cancel";
+containerButton.appendChild(cancelButton);
+cancelButton.addEventListener("click", () => {
+  dispatch(navigate(Screens.USER_PROFILE));
+});
+
+this.shadowRoot?.appendChild(containerButton)
     }
   }
 }

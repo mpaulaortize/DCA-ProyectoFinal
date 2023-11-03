@@ -78,6 +78,11 @@ class AppContainer extends HTMLElement {
             this.shadowRoot?.appendChild(settings);
           break;
 
+          case Screens.PASSWORD:
+            const passwordScreen = this.ownerDocument.createElement("password-screen");
+            this.shadowRoot?.appendChild(passwordScreen);
+          break;
+
         default:
           break;
       }
