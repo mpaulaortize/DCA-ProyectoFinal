@@ -41,6 +41,8 @@ class sharescreen extends HTMLElement {
     ) as shareItems;
     shareItems.setAttribute(shareItemsAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(shareItems);
+
+    
   }
 }
 

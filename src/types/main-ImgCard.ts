@@ -3,6 +3,7 @@ export interface mainImgCard {
     likes: string;
     publications: string;
     user: string;
+    id: string
     
   }
   
