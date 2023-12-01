@@ -165,17 +165,16 @@ const getaudioListener = (cb: (docs: Audio[]) => void) => {
 };
 
 //para comentar 
-export const addComment = async (comments:any) => {
+export const addComment = async (comment: string) => {
   try {
-    const commentData = collection (db, "comments");
-    await addDoc(commentData,comments);
-    console.log("Se añadio un comentario")
-    
+    const commentData = collection(db, "comments");
+    await addDoc(commentData, { comment }); // Agrega el comentario como un objeto en Firestore
+    console.log("Se añadió un comentario");
   } catch (error) {
     console.error(error);
-    
   }
 }
+
 export const getComment = async () => {
 
     const querySnapshot =  await getDocs (collection(db, "Comment"));
