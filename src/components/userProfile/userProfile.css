@@ -39,21 +39,22 @@
 }
 
 .button-profile {
-  padding: 15px 5px;
-  width: 20%;
+  padding: 20px 5px;
+  width: 10%;
   font-size: 15px;
   text-decoration: none;
   border: none;
   border-radius: 10px;
   color: black;
   background-color: white;
-  margin-bottom: 3%;
 }
 
 .containerButton {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Puedes ajustar el margen según sea necesario */
+  margin-bottom: 20px;
 }
 
 .container {
@@ -61,6 +62,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.btn-logout {
+  padding: 20px 5px;
+  width: 10%;
+  font-size: 15px;
+  text-decoration: none;
+  border: 2px solid rgb(255, 92, 92);
+  border-radius: 10px;
+  color: rgb(255, 92, 92);
+  background-color: transparent;
+  margin: 0 10px;
 }
 
 /* Medium screen styles (min-width: 768px, max-width: 1023px) */

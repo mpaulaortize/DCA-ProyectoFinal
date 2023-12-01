@@ -9,6 +9,7 @@ import "./screens/message/message";
 import "./screens/sharescreen/sharescreen";
 import "./screens/settings/settings";
 import "./screens/passwordScreen/passwordScreen";
+import "./screens/logIn/logIn"
 
 //Para navegation
 import { addObserver } from "./store/index";
@@ -37,11 +38,16 @@ class AppContainer extends HTMLElement {
       console.log(appState.screen);
 
       switch (appState.screen) {
-        case Screens.LOGIN:
+        case Screens.CREATEACCOUNT:
           const createAccount =
             this.ownerDocument.createElement("create-account");
           this.shadowRoot?.appendChild(createAccount);
           break;
+
+          case Screens.LOGIN:
+            const login = this.ownerDocument.createElement("login-screen");
+            this.shadowRoot?.appendChild(login);
+            break;
 
         case Screens.DASHBOARD:
           const mainScreen = this.ownerDocument.createElement("main-feed");
@@ -94,56 +100,6 @@ class AppContainer extends HTMLElement {
     }
   }
 
-  //Para el Style quitar el display.
-  //const styleElement = document.createElement("style");
-  //styleElement.textContent = indexStyle;
-  //this.shadowRoot?.appendChild(styleElement);
-
-  //const mainScreen = this.ownerDocument.createElement("main-feed");
-  //this.shadowRoot?.appendChild(mainScreen);
-  //mainScreen.classList.add("mainscreen");
-
-  //const Profile = this.ownerDocument.createElement("profile-screen");
-  //this.shadowRoot?.appendChild(Profile);
-  //Profile.classList.add("profilescreen");
-
-  //const Search = this.ownerDocument.createElement("search-screen");
-  //this.shadowRoot?.appendChild(Search);
-  //Profile.classList.add("searchcreen");
-
-  //const createAccount = this.ownerDocument.createElement("create-account");
-  //this.shadowRoot?.appendChild(createAccount);
-  //Profile.classList.add("createaccount");
-
-  //const notificationScreen = this.ownerDocument.createElement(
-  //  "notification-container"
-  //);
-  //notificationScreen.classList.add("notificationScreen");
-  //this.shadowRoot?.appendChild(notificationScreen);
-
-  //const MessagesScreen =
-  //  this.ownerDocument.createElement("messages-screen");
-  //MessagesScreen.classList.add("MessagesScreen");
-  //this.shadowRoot?.appendChild(MessagesScreen);
-
-  // const sharescreen = this.ownerDocument.createElement("share-screen");
-  // this.shadowRoot?.appendChild(sharescreen);
-  
-
-  //const settings = this.ownerDocument.createElement("settings-screen");
-  //this.shadowRoot?.appendChild(settings);
-  //Profile.classList.add("settingsscreen");
-
-  //const passwordScreen =
-  //  this.ownerDocument.createElement("password-screen");
-  //this.shadowRoot?.appendChild(passwordScreen);
-  //Profile.classList.add("passwordscreen");
-
-
-  //const img = this.ownerDocument.createElement("imput")
-  //img.types = File
-  //addeventListener
-  //crear una constante que empieze en 0 
 }
 
 customElements.define("app-container", AppContainer);
