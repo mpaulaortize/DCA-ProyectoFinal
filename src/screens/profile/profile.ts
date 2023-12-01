@@ -6,13 +6,23 @@ import MenuCard, {
 import userProfile, {
   Attribute as userProfileAttribute,
 } from "../../components/userProfile/userProfile";
-import { dataGrid } from "../../components/feed-Grid/dataprofile";
 import profileGrid, {
   Attribute as profileGridAttribute,
 } from "../../components/feed-Grid/profile-Grid";
 
 import { MenuProfile } from "../../components/export";
 
+// firebase
+import firebase from "../../utils/firebase";
+import { FeedGrid } from "../../types/FeedGrid";
+import { getFeedGrid } from "../../utils/firebase";
+
+// parámetros
+const formData: Omit<FeedGrid, "id"> = {
+  img: "",
+  img1: "",
+  img2: "",
+};
 
 class Profile extends HTMLElement {
   message: profileGrid[] = [];
@@ -20,43 +30,59 @@ class Profile extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-
-    dataGrid.forEach((photo) => {
-      const profileGrid = this.ownerDocument.createElement(
-        "profile-grid"
-      ) as profileGrid;
-      profileGrid.setAttribute(profileGridAttribute.img, photo.img);
-      profileGrid.setAttribute(profileGridAttribute.img1, photo.img1);
-      profileGrid.setAttribute(profileGridAttribute.img2, photo.img2);
-      this.message.push(profileGrid);
-    });
   }
 
   connectedCallback() {
     this.render();
-    console.log(this.message);
   }
 
-  render() {
+  // valores
+
+  changeimg(e: any) {
+    formData.img = e.target.value;
+    formData.img1 = e.target.value;
+    formData.img2 = e.target.value;
+  }
+
+  async render() {
     if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+
+    const styleElement = document.createElement("style");
+    styleElement.textContent = indexstyles;
+    this.shadowRoot?.appendChild(styleElement);
+
+    // Agregar userProfile y MenuProfile
 
     const menucard = this.ownerDocument.createElement("menu-card") as MenuCard;
     menucard.setAttribute(MenuCardAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(menucard);
 
-    const Profile = this.ownerDocument.createElement(
+    const userProf = this.ownerDocument.createElement(
       "user-profile"
     ) as userProfile;
-    Profile.setAttribute(userProfileAttribute.user, "@a.miller");
-    this.shadowRoot?.appendChild(Profile);
+    userProf.setAttribute(userProfileAttribute.user, "@a.miller");
+    this.shadowRoot?.appendChild(userProf);
 
-    this.message.forEach((photo) => {
-      console.log(photo);
-      this.shadowRoot?.appendChild(photo);
+    // Obtener los datos de los posts desde Firebase
+    const postData = await getFeedGrid();
+
+    // Crear contenedor para las imágenes de los posts
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add(`image-container`);
+    this.shadowRoot?.appendChild(imageContainer);
+
+    // Mostrar las imágenes en la página
+    postData.forEach((post: any) => {
+      console.log(post); // Agrega esta línea para verificar si hay datos en post
+
+      const card = this.ownerDocument.createElement(
+        "profile-grid"
+      ) as profileGrid;
+      card.setAttribute(profileGridAttribute.img, post.img);
+      card.setAttribute(profileGridAttribute.img1, post.img1);
+      card.setAttribute(profileGridAttribute.img2, post.img2);
+      imageContainer.appendChild(card);
     });
-
-    const MenuProfile = document.createElement("menu-profile") as MenuProfile;
-    this.shadowRoot?.appendChild(MenuProfile);
   }
 }
 

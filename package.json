@@ -13,6 +13,7 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "serve": "^14.2.1",
+    "server": "^1.0.38",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.2",
     "webpack": "^5.76.3",

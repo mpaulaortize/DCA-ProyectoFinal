@@ -22,6 +22,8 @@ import ImgCard, {
 import indexstyles from "./mainFeed.css";
 import { MenuFeed } from "../../components/export";
 
+//Para Firebase
+
 class MainFeed extends HTMLElement {
   tweets: TweetCard[] = [];
   card: AudioCard[] = [];
