@@ -1,5 +1,5 @@
 
-export default {
+export const firebaseConfig = {
   apiKey: "AIzaSyBUvaFu_ChfaXinQGvRpqLjKv-fMC9a8W0",
   authDomain: "dca-2023-2.firebaseapp.com",
   projectId: "dca-2023-2",

@@ -138,6 +138,12 @@ class AppContainer extends HTMLElement {
   //  this.ownerDocument.createElement("password-screen");
   //this.shadowRoot?.appendChild(passwordScreen);
   //Profile.classList.add("passwordscreen");
+
+
+  //const img = this.ownerDocument.createElement("imput")
+  //img.types = File
+  //addeventListener
+  //crear una constante que empieze en 0 
 }
 
 customElements.define("app-container", AppContainer);
