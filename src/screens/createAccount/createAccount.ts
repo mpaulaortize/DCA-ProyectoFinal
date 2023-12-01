@@ -41,9 +41,6 @@ class CreateAccount extends HTMLElement {
     const Button = this.ownerDocument.createElement("button");
     Button.innerText = "Create Account";
     this.shadowRoot?.appendChild(Button);
-    Button.addEventListener("click", () => {
-      dispatch(navigate(Screens.LOGIN));
-    });
 
     Button.addEventListener("click", async () => {
       if (this.createFormElement) {
@@ -60,7 +57,7 @@ class CreateAccount extends HTMLElement {
 
           if (email.trim() !== "" && name.trim() !== "") {
             saveUser(name, email, password);
-            dispatch(navigate(Screens.LOGIN));
+            dispatch(navigate(Screens.DASHBOARD));
             console.log("Usuario registrado exitosamente");
           } else {
             alert("Por favor, ingrese datos válidos.");

@@ -21,20 +21,37 @@ class LoginForm extends HTMLElement {
           ${indexStyle}
         </style>
 
-        <h1>Login</h1>
+        <h1 class="title">Login</h1>
 
-        <form>
+        <form id="login-form">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
 
           <label for="password">Password</label>
           <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
-
-          <button id="login-button" type="button">Login</button>
         </form>
       `;
     }
 
+    // Lógica para referenciar elementos del formulario y agregar el evento al botón
+    const loginForm = this.shadowRoot?.getElementById(
+      "login-form"
+    ) as HTMLFormElement | null;
+    const emailInput = this.shadowRoot?.getElementById(
+      "email"
+    ) as HTMLInputElement | null;
+    const passwordInput = this.shadowRoot?.getElementById(
+      "password"
+    ) as HTMLInputElement | null;
+
+    if (loginForm && emailInput && passwordInput) {
+      // Agrega aquí la lógica para el inicio de sesión utilizando email y password
+      console.log(
+        "Inicio de sesión con",
+        emailInput.value,
+        passwordInput.value
+      );
+    }
   }
 
   getEmailInput(): HTMLInputElement | null {
