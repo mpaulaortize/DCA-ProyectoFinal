@@ -33,6 +33,44 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 const storage = getStorage(app);
+const auth = getAuth();
+
+//Auth
+export const saveUser = async (name: any, email: any, password: any) => {
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      setDoc(doc(db, "users", name), {
+        name: name,
+        email: email,
+      });
+    })
+    .catch((error) => {
+      console.error("Error al crear usuario:", error.code, error.message);
+    });
+};
+
+export const getUsers = async (email: any, password: any) => {
+  const auth = getAuth();
+  signInWithEmailAndPassword(auth, email, password);
+  try {
+    const userCredential = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const user = userCredential.user;
+    console.log("se inicio sesion", user);
+    return user; // Devuelve el usuario si la autenticación es exitosa
+  } catch (error) {
+    alert(
+      "correo electronico o contraseña invalidos, por favor intentalo de nuevo"
+    );
+    console.log(`Error al iniciar sesión`, error);
+  }
+};
+//FinAuth
 
 // para mensajes
 
@@ -365,6 +403,7 @@ const getSearchTypeslistener = (cb: (docs: SearchTypes[]) => void) => {
 export default {
   //   CreateAccount,
   //   logIn,
+  saveUser,
   addmessages,
   getmessage,
   getProductsListener,
