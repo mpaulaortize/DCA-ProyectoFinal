@@ -9,6 +9,18 @@ import searchGrid, {
 } from "../../components/search-Grid/search-Grid";
 import { MenuSearch } from "../../components/export";
 
+// firebase
+import firebase from "../../utils/firebase";
+import { SearchTypes } from "../../types/searchtypes";
+import { getSearchTypes } from "../../utils/firebase";
+
+// parámetros
+const formData: Omit<SearchTypes, "id"> = {
+  img: "",
+  img1: "",
+  img2: "",
+};
+
 class Search extends HTMLElement {
   message: searchGrid[] = [];
 
@@ -32,22 +44,43 @@ class Search extends HTMLElement {
     console.log(this.message);
   }
 
-  render() {
+  // valores
+
+  changeimg(e: any) {
+    formData.img = e.target.value;
+    formData.img1 = e.target.value;
+    formData.img2 = e.target.value;
+  }
+
+  async render() {
     if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+
+    // Agregar MenuProfile
 
     const menucard = this.ownerDocument.createElement("menu-card") as MenuCard;
     menucard.setAttribute(MenuCardAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(menucard);
 
-    const search = this.ownerDocument.createElement("search-component");
-    this.shadowRoot?.appendChild(search);
+    // Obtener los datos de los posts desde Firebase
+    const postData = await getSearchTypes();
 
-    this.message.forEach((photo) => {
-      console.log(photo);
-      this.shadowRoot?.appendChild(photo);
+    // Crear contenedor para las imágenes de los posts
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add(`image-container`);
+    this.shadowRoot?.appendChild(imageContainer);
+
+    // Mostrar las imágenes en la página
+    postData.forEach((post: any) => {
+      console.log(post); // Agrega esta línea para verificar si hay datos en post
+
+      const card = this.ownerDocument.createElement(
+        "search-grid"
+      ) as searchGrid;
+      card.setAttribute(searchGridAttribute.img, post.img);
+      card.setAttribute(searchGridAttribute.img1, post.img1);
+      card.setAttribute(searchGridAttribute.img2, post.img2);
+      imageContainer.appendChild(card);
     });
-   const menuPhone = document.createElement("menu-search") as MenuSearch;
-   this.shadowRoot?.appendChild(menuPhone);
   }
 }
 

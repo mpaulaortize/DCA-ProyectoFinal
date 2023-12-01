@@ -38,6 +38,8 @@ const dataAudio: Omit<Audio, "id"> = {
  img: ""
 };
 
+//Para Firebase
+
 class MainFeed extends HTMLElement {
   tweets: TweetCard[] = [];
   card: AudioCard[] = [];
