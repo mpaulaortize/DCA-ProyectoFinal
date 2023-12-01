@@ -15,6 +15,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
 import { getAnalytics } from "firebase/analytics";
 import { getStorage, ref, uploadBytes, uploadString } from "firebase/storage";
 
@@ -22,7 +23,6 @@ import { getStorage, ref, uploadBytes, uploadString } from "firebase/storage";
 import { FeedGrid } from "../types/FeedGrid";
 import { Notifications } from "../types/notificationType";
 import { SearchTypes } from "../types/searchtypes";
-import { CreateAccount } from "../types/CreateProfile";
 import { initializeApp } from "@firebase/app";
 import { Tweet } from "../types/Tweet";
 import { Message } from "../types/Messages";
