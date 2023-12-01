@@ -34,6 +34,7 @@ class LoginForm extends HTMLElement {
         </form>
       `;
     }
+
   }
 
   getEmailInput(): HTMLInputElement | null {

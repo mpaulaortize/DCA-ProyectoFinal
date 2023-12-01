@@ -67,8 +67,7 @@ class LoginScreen extends HTMLElement {
     });
 
     // Otros componentes, como información de cuenta y menú inferior
-    const accountInfo = this.ownerDocument.createElement("login-form");
-    this.shadowRoot?.appendChild(accountInfo);
+  
 
     const lowerMenuElement = this.ownerDocument.createElement(
       "lower-menu"

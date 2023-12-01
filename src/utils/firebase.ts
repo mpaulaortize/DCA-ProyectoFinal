@@ -218,30 +218,17 @@ const getaudioListener = (cb: (docs: Audio[]) => void) => {
 };
 //Fin Audio
 
-//para comentar
-export const addComment = async (comments: any) => {
+//para comentar 
+export const addComment = async (comment: string) => {
   try {
     const commentData = collection(db, "comments");
-    await addDoc(commentData, comments);
-    console.log("Se añadio un comentario");
+    await addDoc(commentData, { comment }); // Agrega el comentario como un objeto en Firestore
+    console.log("Se añadió un comentario");
   } catch (error) {
     console.error(error);
   }
-};
-export const getComment = async () => {
-  const querySnapshot = await getDocs(collection(db, "Comment"));
-  const commented: any = [];
+}
 
-  querySnapshot.forEach((doc) => {
-    const comment = doc.data();
-    commented.push({
-      id: doc.id,
-      ...comment,
-    });
-  });
-  return commented;
-};
-//Fin comentar
 
 //FeedGrid
 export const addFeedGrid = async (product: Omit<FeedGrid, "id">) => {
@@ -278,7 +265,23 @@ const getFeedGridlistener = (cb: (docs: FeedGrid[]) => void) => {
   });
 };
 //Fin FeedGrid
+//para comentar 
 
+export const getComment = async () => {
+  const querySnapshot = await getDocs(collection(db, "Comment"));
+  const commented: any = [];
+
+  querySnapshot.forEach((doc) => {
+    const comment = doc.data();
+    commented.push({
+      id: doc.id,
+      ...comment,
+    });
+  });
+  return commented;
+};
+
+//fin de comentar 
 //Para Notifications
 export const addNotifications = async (product: Omit<Notifications, "id">) => {
   try {

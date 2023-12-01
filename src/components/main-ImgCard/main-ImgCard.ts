@@ -25,14 +25,8 @@ class ImgCard extends HTMLElement {
     };
     return Object.keys(attrs);
   }
-  async saveCommentToFirestore(comment: string) {
-    try {
-      await addComment({ comment }); // Llama a la función de Firebase para agregar el comentario a Firestore
-      console.log("Comentario guardado en Firestore");
-    } catch (error) {
-      console.error("Error al guardar el comentario en Firestore:", error);
-    }
-  }
+ 
+  
 
   
   attributeChangedCallback(
@@ -158,7 +152,7 @@ submitButton.addEventListener("click", async () => {
   if (comment) {
     const newComment = `@a.miller: ${comment}`;
     try {
-      await addComment({ comment: newComment }); // Llama a la función de Firebase para agregar el comentario
+      await addComment(newComment); // Llama a la función de Firebase para agregar el comentario a Firestore
       addCommentLink.value = ""; // Limpia el campo de comentario después de enviarlo a Firebase
 
       // Crea un elemento de comentario en la interfaz
@@ -170,6 +164,7 @@ submitButton.addEventListener("click", async () => {
     }
   }
 });
+
 
 inputContainer.appendChild(addCommentLink);
 inputContainer.appendChild(submitButton);
