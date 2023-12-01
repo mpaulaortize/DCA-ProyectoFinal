@@ -39,6 +39,26 @@ class CreateForm extends HTMLElement {
       `;
     }
   }
+
+  getNameInput(): HTMLInputElement | null {
+    return this.shadowRoot?.getElementById("name") as HTMLInputElement | null;
+  }
+
+  getEmailInput(): HTMLInputElement | null {
+    return this.shadowRoot?.getElementById("email") as HTMLInputElement | null;
+  }
+
+  getPasswordInput(): HTMLInputElement | null {
+    return this.shadowRoot?.getElementById(
+      "password"
+    ) as HTMLInputElement | null;
+  }
+
+  getReenterPasswordInput(): HTMLInputElement | null {
+    return this.shadowRoot?.getElementById(
+      "reenter-password"
+    ) as HTMLInputElement | null;
+  }
 }
 
 customElements.define("create-form", CreateForm);
