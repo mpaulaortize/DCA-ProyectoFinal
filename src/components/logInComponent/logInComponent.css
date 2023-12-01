@@ -3,6 +3,10 @@
   font-family: "Inter", sans-serif;
 }
 
+.title {
+  margin-left: 48%;
+}
+
 form {
   display: flex;
   flex-direction: column;
