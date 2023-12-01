@@ -1,13 +1,25 @@
-import indexstyles from "./message.css";
-import MessageCard, {
-  Attribute as MessageCardAttribute,
-} from "../../components/message/messageC";
 import MenuCard, {
   Attribute as MenuCardAttribute,
 } from "../../components/menu-Card/menu-Card";
-import { datamessage } from "../../components/message/messagedata";
-import "../../components/export";
+import indexstyles from "./message.css";
 import { MenuNotification } from "../../components/export";
+import MessageCard, {
+  Attribute as MessageCardAttribute,
+} from "../../components/message/messageC";
+
+// para firebase 
+import firebase from "../../utils/firebase"; 
+import {getmessage}from "../../utils/firebase"
+import { Message } from "../../types/Messages";
+
+//parametros 
+const formData: Omit<Message, "id"> = {
+  user: "",
+  img: "",
+  time: "",
+  message: "",
+};
+
 
 
 class Messages extends HTMLElement {
@@ -16,30 +28,41 @@ class Messages extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-
-    datamessage.forEach((message) => {
-      const messageCard = this.ownerDocument.createElement(
-        "message-card"
-      ) as MessageCard;
-      messageCard.setAttribute(MessageCardAttribute.user, message.user);
-      messageCard.setAttribute(MessageCardAttribute.message, message.message);
-      messageCard.setAttribute(MessageCardAttribute.img, message.img);
-      messageCard.setAttribute(MessageCardAttribute.time, message.time);
-      this.message.push(messageCard);
-    });
   }
+
+ 
 
   connectedCallback() {
     this.render();
-    console.log(this.message);
   }
+  
+//valores 
 
-  render() {
-    if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
-    const styleElement = document.createElement("style");
-    styleElement.textContent = indexstyles;
-    this.shadowRoot?.appendChild(styleElement);
+  changeimg(e: any) {
+    formData.img = e.target.value; }
+    changeuser(e: any) {
+      formData.user = e.target.value; }
+    changemessage(e: any) {
+      formData.message = e.target.value; }
+    changetime(e: any) {
+      formData.time = e.target.value; }
 
+  async render() {
+
+
+    //para firebase 
+    try {
+      const postData = await getmessage();
+      console.log(postData);
+
+      if (this.shadowRoot) this.shadowRoot.innerHTML = ``;
+      const styleElement = document.createElement("style");
+      styleElement.textContent = indexstyles;
+      this.shadowRoot?.appendChild(styleElement);
+
+
+
+      
     const menucard = this.ownerDocument.createElement("menu-card") as MenuCard;
     menucard.setAttribute(MenuCardAttribute.user, "@a.miller");
     this.shadowRoot?.appendChild(menucard);
@@ -52,25 +75,38 @@ class Messages extends HTMLElement {
     title.classList.add("title");
     this.shadowRoot?.appendChild(title);
 
-    const general = document.createElement("div");
-    general.classList.add(`general`);
-    this.shadowRoot?.appendChild(general);
+      // Obtener los datos de los posts desde Firebase
+      const posts = await firebase.getmessage();
+      
 
-    const datacontainer = document.createElement("div");
-    datacontainer.classList.add(`data`);
-    this.shadowRoot?.appendChild(datacontainer);
+      // Crear contenedor para las imágenes de los posts
+      const imageContainer = document.createElement("div");
+      imageContainer.classList.add(`image-container`);
+      this.shadowRoot?.appendChild(imageContainer);
 
-    this.message.forEach((user) => {
-      console.log(user);
-      datacontainer.appendChild(user);
-    });
+      // Mostrar las imágenes en la página
+      postData.forEach((post: any) => {
+        console.log(post); // Agrega esta línea para verificar si hay datos en post
+        const card = this.ownerDocument.createElement("message-card") as MessageCard;
+        card.setAttribute(MessageCardAttribute.img, post.img);
+        card.setAttribute(MessageCardAttribute.user, post.user);
+        card.setAttribute(MessageCardAttribute.message, post.message);
+        card.setAttribute(MessageCardAttribute.time, post.time);
+        // Agregar card al contenedor de mensajes
+        this.shadowRoot?.appendChild(card);
+        console.log(card)
+      });
+  
+      // const yourmessages = this.ownerDocument.createElement("your-messages");
+      // yourmessages.classList.add("yourmessage");
+      // this.shadowRoot?.appendChild(yourmessages);
 
-    const yourmessages = this.ownerDocument.createElement("your-messages");
-    yourmessages.classList.add("yourmessage");
-    general.appendChild(yourmessages);
+      const menumessage = document.createElement("menu-message") as MenuNotification;
+      this.shadowRoot?.appendChild(menumessage);
+    } catch (error) {
+      console.error(error);
+    }
 
-    const menumessage = document.createElement("menu-message") as MenuNotification;
-     this.shadowRoot?.appendChild(menumessage);
     
   }
 }

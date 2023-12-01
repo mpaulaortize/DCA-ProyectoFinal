@@ -1,5 +1,7 @@
 import CardStyle from "./main-ImgCard.css";
-const users = ["@fashionista_chic", "@pet_lover", "@music_enthusiast", "@bookworm_reader"];
+import firebase from "../../utils/firebase"
+import { getComment, addComment} from "../../utils/firebase";
+
 
 export enum Attribute {
   "publication" = "publication",
@@ -23,7 +25,16 @@ class ImgCard extends HTMLElement {
     };
     return Object.keys(attrs);
   }
+  async saveCommentToFirestore(comment: string) {
+    try {
+      await addComment({ comment }); // Llama a la función de Firebase para agregar el comentario a Firestore
+      console.log("Comentario guardado en Firestore");
+    } catch (error) {
+      console.error("Error al guardar el comentario en Firestore:", error);
+    }
+  }
 
+  
   attributeChangedCallback(
     propName: Attribute,
     oldValue: string | undefined,
@@ -140,22 +151,29 @@ addCommentLink.placeholder = 'Add a comment';
 
 const submitButton = this.ownerDocument.createElement("button");
 submitButton.classList.add("buttoncommet");
-submitButton.innerText = ".";
+submitButton.innerText = "Submit";
 
-
-submitButton.addEventListener("click", () => {
-  const comment = addCommentLink.value;
+submitButton.addEventListener("click", async () => {
+  const comment = addCommentLink.value.trim();
   if (comment) {
-    const randomUser = users[Math.floor(Math.random() * users.length)];
-    const newComment = this.ownerDocument.createElement("p");
-    newComment.innerText = `${randomUser}: ${comment}`;
-    inputContainer.appendChild(newComment);
-    addCommentLink.value = "";
+    const newComment = `@a.miller: ${comment}`;
+    try {
+      await addComment({ comment: newComment }); // Llama a la función de Firebase para agregar el comentario
+      addCommentLink.value = ""; // Limpia el campo de comentario después de enviarlo a Firebase
+
+      // Crea un elemento de comentario en la interfaz
+      const commentElement = this.ownerDocument.createElement("p");
+      commentElement.innerText = newComment;
+      inputContainer.appendChild(commentElement); // Añade el comentario al contenedor en la interfaz
+    } catch (error) {
+      console.error("Error al agregar el comentario:", error);
+    }
   }
 });
 
-
-
+inputContainer.appendChild(addCommentLink);
+inputContainer.appendChild(submitButton);
+buttonInfo.appendChild(inputContainer);
 
 section.appendChild(bodyCard);
 bodyCard.appendChild(postImage);
@@ -177,6 +195,7 @@ buttonInfo.appendChild(submitButton);
 this.shadowRoot.appendChild(section);
     
     }
+    
   }
 }
 
